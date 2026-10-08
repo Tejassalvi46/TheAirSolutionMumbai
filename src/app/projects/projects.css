@@ -1,0 +1,241 @@
+/* ==========================================
+   GLOBAL RESETS
+   ========================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ==========================================
+   PAGE WRAPPER
+   ========================================== */
+.projects-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 20px 60px 20px;
+  background: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ==========================================
+   PAGE TITLE BOX — "PROJECTS"
+   ✅ Rounded corners like Contact Us cards
+   ========================================== */
+.page-title-box {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;              /* ✅ Rounded */
+  padding: 18px 26px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.page-title-box:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.page-title-box h1 {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #4b5563;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  margin: 0;
+  transition: color 0.25s ease;
+}
+
+.page-title-box h1:hover {
+  color: #dc2626;
+}
+
+/* ==========================================
+   CATEGORY TITLE BOX — "DATA COMP" etc.
+   ✅ Rounded corners + soft shadow
+   ========================================== */
+.category-title-box {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;              /* ✅ Rounded */
+  padding: 12px 22px;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+/* Gap above each category (except first) */
+.category-title-box:not(:first-of-type) {
+  margin-top: 30px;
+}
+
+.category-title-box:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.category-title-box h2 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #dc2626;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin: 0;
+  transition: color 0.25s ease;
+}
+
+.category-title-box h2:hover {
+  color: #991b1b;
+}
+
+/* ==========================================
+   PROJECTS GRID — FIXED 3 COLUMNS PER ROW
+   ========================================== */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 10px;
+}
+
+/* ==========================================
+   SINGLE PROJECT CARD
+   ✅ Rounded corners + soft shadow + hover lift
+   ========================================== */
+.project-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;              /* ✅ Rounded */
+  padding: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: transform 0.25s ease, box-shadow 0.25s ease,
+              border-color 0.25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-3px);
+  border-color: #cbd5e1;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* ==========================================
+   IMAGE WRAPPER — rounded corners + clipped zoom
+   ========================================== */
+.project-img-wrapper {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 10px;              /* ✅ Rounded inner */
+  background: #f8fafc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+  will-change: transform;
+
+  /* iOS rendering */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* ✅ ZOOM ON HOVER */
+.project-card:hover .project-img-wrapper img {
+  transform: scale(1.1);
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+
+/* Tablet (iPad) — 2 columns */
+@media (max-width: 992px) {
+  .projects-page {
+    padding: 24px 16px 50px 16px;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  .page-title-box { padding: 16px 22px; }
+  .page-title-box h1 { font-size: 1.4rem; }
+  .category-title-box h2 { font-size: 0.95rem; }
+}
+
+/* Mobile — 1 column */
+@media (max-width: 600px) {
+  .projects-page {
+    padding: 20px 12px 40px 12px;
+  }
+
+  .page-title-box {
+    padding: 14px 18px;
+    border-radius: 14px;
+    margin-bottom: 16px;
+  }
+  .page-title-box h1 {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+  }
+
+  .category-title-box {
+    padding: 10px 16px;
+    border-radius: 10px;
+    margin-bottom: 14px;
+  }
+  .category-title-box:not(:first-of-type) {
+    margin-top: 24px;
+  }
+  .category-title-box h2 {
+    font-size: 0.88rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .project-card {
+    padding: 10px;
+    border-radius: 12px;
+  }
+
+  .project-img-wrapper {
+    border-radius: 8px;
+  }
+}
+
+/* Very small phones (iPhone SE) */
+@media (max-width: 380px) {
+  .page-title-box h1 { font-size: 1.05rem; }
+  .category-title-box h2 { font-size: 0.82rem; }
+  .project-card { padding: 8px; border-radius: 10px; }
+}
+
+/* ==========================================
+   iOS & ANDROID TOUCH TWEAKS
+   ========================================== */
+.project-card,
+.project-img-wrapper img {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .project-card:hover {
+    transform: none;                /* Skip lift on touch */
+  }
+  .project-card:hover .project-img-wrapper img {
+    transform: scale(1.05);         /* Gentler zoom on touch */
+  }
+}

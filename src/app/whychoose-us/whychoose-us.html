@@ -1,0 +1,28 @@
+<section class="why-choose-section">
+  <div class="container">
+    
+    <!-- Header & Divider -->
+    <div class="section-divider">
+      <span class="divider-text">Why Choose Us</span>
+    </div>
+
+    <h2 class="section-title">Your Comfort is Our Priority</h2>
+    <p class="section-subtitle">
+      We combine decades of HVAC expertise with top-tier equipment to deliver reliable, 
+      fast, and energy-efficient cooling solutions for your home or business.
+    </p>
+
+    <!-- Features Grid (Looping over the features array) -->
+    <div class="features-grid">
+      <div class="feature-card" *ngFor="let feature of features">
+        <div class="feature-icon-wrapper">
+          <!-- Render the SVG dynamically via innerHTML -->
+          <span [innerHTML]="feature.icon"></span>
+        </div>
+        <h3>{{ feature.title }}</h3>
+        <p>{{ feature.description }}</p>
+      </div>
+    </div>
+
+  </div>
+</section>

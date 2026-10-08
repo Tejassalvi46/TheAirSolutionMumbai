@@ -1,0 +1,201 @@
+/* ----- Container ----- */
+.brand-detail-page {
+  background: #f9fafc;
+  min-height: 100vh;
+  padding: 2rem 1.5rem;
+}
+
+.detail-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ----- Back Nav ----- */
+.back-nav {
+  margin-bottom: 2rem;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  color: #3182ce;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.back-link:hover {
+  color: #2b6cb0;
+  text-decoration: underline;
+}
+
+/* ----- Hero ----- */
+.detail-hero {
+  text-align: center;
+  padding: 2rem 1rem 3rem;
+  background: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+  margin-bottom: 2.5rem;
+}
+
+.detail-hero .hero-badge {
+  display: inline-block;
+  background: #3182ce;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0.25rem 1.25rem;
+  border-radius: 20px;
+  margin-bottom: 0.75rem;
+}
+
+.detail-hero h1 {
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: #1a202c;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.detail-hero .hero-desc {
+  font-size: 1.2rem;
+  color: #4a5568;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ----- Systems Section ----- */
+.systems-section h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* ----- Grid ----- */
+.systems-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.75rem;
+}
+
+/* ----- System Card ----- */
+.system-card {
+  background: #ffffff;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.07);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.system-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 20px -8px rgba(0,0,0,0.12);
+}
+
+.card-img-wrapper {
+  position: relative;
+  height: 160px;
+  overflow: hidden;
+}
+
+.card-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-label {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #f6ad55;
+  color: #1a202c;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 0.25rem 1rem;
+  border-radius: 20px;
+}
+
+.card-body {
+  padding: 1.25rem 1.5rem 1.5rem;
+}
+
+.card-body h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1a202c;
+  margin-bottom: 0.5rem;
+}
+
+.card-body p {
+  font-size: 0.9rem;
+  color: #4a5568;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.quote-btn {
+  background: #3182ce;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1.25rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.quote-btn:hover {
+  background: #2b6cb0;
+}
+
+/* ----- Responsive ----- */
+@media (max-width: 768px) {
+  .brand-detail-page {
+    padding: 1.5rem 1rem;
+  }
+
+  .detail-hero {
+    padding: 1.5rem 1rem;
+  }
+
+  .detail-hero h1 {
+    font-size: 2rem;
+  }
+
+  .detail-hero .hero-desc {
+    font-size: 1rem;
+  }
+
+  .systems-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .card-img-wrapper {
+    height: 140px;
+  }
+}
+
+@media (max-width: 480px) {
+  .systems-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .card-img-wrapper {
+    height: 160px;
+  }
+
+  .detail-hero h1 {
+    font-size: 1.75rem;
+  }
+}

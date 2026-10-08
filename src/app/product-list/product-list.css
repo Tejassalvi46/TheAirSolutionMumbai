@@ -1,0 +1,226 @@
+/* ----- Reset & Base ----- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:host {
+  display: block;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  background: #f9fafc;
+}
+
+/* ----- Section Wrapper ----- */
+.products-section {
+  padding: 3rem 1.5rem;
+  background: #f9fafc;
+}
+
+.products-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ----- Header ----- */
+.products-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.products-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #033a21;
+  letter-spacing: -0.02em;
+}
+
+.products-header p {
+  font-size: 1.125rem;
+  color: #f5b400;
+  max-width: 600px;
+  margin: 0.5rem auto 0;
+}
+
+/* ----- Grid: 3 columns on desktop ----- */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+/* ========================================== */
+/* CARD — DEFAULT BORDER #033a21, HOVER #f5b400 */
+/* ========================================== */
+.product-card {
+  background: #ffffff;
+  border-radius: 1rem;
+  overflow: hidden;
+
+  /* DEFAULT BORDER (dark green) */
+  /* border: 1px solid #033a21; */
+
+  box-shadow:
+    0 10px 9px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+
+  /* HOVER BORDER (yellow / gold) */
+  border-color: #f5b400;
+
+  box-shadow:
+    0 10px 15px -3px rgba(114, 112, 107, 0.25),
+    0 4px 6px -2px rgba(114, 112, 107, 0.25);
+}
+
+/* ----- Image Wrapper ----- */
+.product-image-wrapper {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-image-wrapper img {
+  width: 100%;
+  height: 125%;            /* FIXED: was 300px inside a 200px box */
+  object-fit: contain;     /* show full product, no cropping */
+  padding: 1.25rem;        /* breathing room around the product */
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image-wrapper img {
+  transform: scale(1.05);
+}
+
+/* ----- Content ----- */
+.product-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.product-content h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #033a21;
+  margin-bottom: 0.5rem;
+}
+
+.product-content p {
+  font-size: 0.95rem;
+  color: #4a5568;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+
+  /* clamp to 4 lines so all cards align */
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ----- Link ----- */
+.product-link {
+  display: inline-block;
+  font-weight: 600;
+  color: #033a21;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  margin-top: auto;
+}
+
+.product-link:hover {
+  color: #f5b400;
+  text-decoration: underline;
+}
+
+/* ================================================ */
+/* RESPONSIVE                                       */
+/* ================================================ */
+
+/* Tablet — 2 columns (992px and below) */
+@media (max-width: 992px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+/* Small tablet / large mobile (768px and below) */
+@media (max-width: 768px) {
+  .products-section {
+    padding: 2rem 1rem;
+  }
+
+  .products-header {
+    margin-bottom: 2rem;
+  }
+
+  .products-header h2 {
+    font-size: 2rem;
+  }
+
+  .products-header p {
+    font-size: 1rem;
+  }
+}
+
+/* Mobile — 1 column (576px and below) */
+@media (max-width: 576px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .product-image-wrapper {
+    height: 200px;
+  }
+
+  .product-content {
+    padding: 1.25rem;
+  }
+
+  .product-content h3 {
+    font-size: 1.15rem;
+  }
+
+  .product-content p {
+    font-size: 0.9rem;
+    -webkit-line-clamp: 5;
+  }
+}
+
+/* Extra small mobile (380px and below) */
+@media (max-width: 380px) {
+  .products-section {
+    padding: 1.5rem 0.75rem;
+  }
+
+  .products-header h2 {
+    font-size: 1.6rem;
+  }
+
+  .products-header p {
+    font-size: 0.9rem;
+  }
+
+  .product-image-wrapper {
+    height: 170px;
+  }
+}

@@ -1,0 +1,559 @@
+<div class="brand-detail-page">
+  <div class="detail-container">
+    <div class="back-nav">
+      <a routerLink="/brand" class="back-link">&larr; Back to All Brands</a>
+    </div>
+
+    <div [ngSwitch]="selectedBrand">
+
+      <!-- ================= 1. MITSUBISHI ELECTRIC ================= -->
+      <div *ngSwitchCase="'mitsubishi-electric'">
+        <div class="detail-hero">
+          <span class="hero-badge">Heavy Duty</span>
+          <h1>Mitsubishi Electric Climate Engineering</h1>
+          <p class="hero-desc">Ultra-quiet operation and extreme commercial durability.</p>
+        </div>
+        <div class="systems-section">
+          <h2>Available Systems</h2>
+          <div class="systems-grid">
+            <div class="system-card">
+              <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80" alt="Mitsubishi Electric Inverter Split">
+                <span class="card-label">Best Seller</span>
+              </div>
+              <div class="card-body">
+                <h3>Mitsubishi Electric Inverter Split</h3>
+                <p>Ultra-quiet inverter split AC engineered for extreme ambient temperatures.</p>
+              </div>
+            </div>
+            <div class="system-card">
+              <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="Mitsubishi Electric VRF">
+                <span class="card-label">Multi-Zone</span>
+              </div>
+              <div class="card-body">
+                <h3>Mitsubishi Electric VRF System</h3>
+                <p>Independent multi-floor climate management for professional towers.</p>
+              </div>
+            </div>
+            <div class="system-card">
+              <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80" alt="Mitsubishi Electric Lossnay">
+                <span class="card-label">Ventilation</span>
+              </div>
+              <div class="card-body">
+                <h3>Mitsubishi Electric Lossnay</h3>
+                <p>Energy recovery ventilator for fresh indoor air exchange loops.</p>
+              </div>
+            </div>
+            <div class="system-card">
+              <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1541888946425-d0fbb18f06f7?auto=format&fit=crop&w=600&q=80" alt="Mitsubishi Electric Ducted">
+                <span class="card-label">Concealed</span>
+              </div>
+              <div class="card-body">
+                <h3>Mitsubishi Electric Ducted</h3>
+                <p>Concealed hidden duct systems maintaining pristine interior architecture.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= 2. DAIKIN ================= -->
+      <div *ngSwitchCase="'daikin'">
+        <div class="detail-hero">
+          <span class="hero-badge">Global Leader</span>
+          <h1>Daikin Systems & Products</h1>
+          <p class="hero-desc">Explore Daikin's high-efficiency climate control solutions.</p>
+        </div>
+        <div class="systems-section">
+          <h2>Available Systems</h2>
+          <div class="systems-grid">
+            <div class="system-card">
+              <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80" alt="Daikin Inverter Split AC">
+                <span class="card-label">Best Seller</span>
+              </div>
+              <div class="card-body">
+                <h3>Daikin Inverter Split AC</h3>
+                <p>Maximum energy efficiency with advanced inverter technology and silent operation.</p>
+              </div>
+            </div>
+            <div class="system-card">
+              <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="Daikin Multi-Split System">
+                <span class="card-label">Multi-Zone</span>
+              </div>
+              <div class="card-body">
+                <h3>Daikin Multi-Split System</h3>
+                <p>Connect multiple indoor units to a single compact outdoor compressor unit.</p>
+              </div>
+            </div>
+            <div class="system-card">
+              <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80" alt="Daikin Ducted System">
+                <span class="card-label">Concealed</span>
+              </div>
+              <div class="card-body">
+                <h3>Daikin Ducted System</h3>
+                <p>Whole-home concealed climate control engineering for seamless interiors.</p>
+              </div>
+            </div>
+            <div class="system-card">
+              <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1541888946425-d0fbb18f06f7?auto=format&fit=crop&w=600&q=80" alt="Daikin Cassette Unit">
+                <span class="card-label">Commercial</span>
+              </div>
+              <div class="card-body">
+                <h3>Daikin Cassette Unit</h3>
+                <p>Ceiling-recessed uniform airflow designed specifically for commercial areas.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= 3. PANASONIC ================= -->
+      <div *ngSwitchCase="'panasonic'">
+        <div class="detail-hero">
+          <span class="hero-badge">Eco Friendly</span>
+          <h1>Panasonic Eco & Air Purification</h1>
+          <p class="hero-desc">nanoe™ air purification and energy-saving technology.</p>
+        </div>
+        <div class="systems-section">
+          <h2>Available Systems</h2>
+          <div class="systems-grid">
+            <div class="system-card">
+              <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80" alt="Panasonic nanoe X Split">
+                <span class="card-label">nanoe™ X</span>
+              </div>
+              <div class="card-body">
+                <h3>Panasonic nanoe™ X Split</h3>
+                <p>Inhibits airborne pollutants and purifies indoor air while cooling.</p>
+              </div>
+            </div>
+            <div class="system-card">
+              <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="Panasonic Inverter Cassette">
+                <span class="card-label">Cassette</span>
+              </div>
+              <div class="card-body">
+                <h3>Panasonic Inverter Cassette</h3>
+                <p>Ceiling-mounted clean airflow backed by intelligent sensor tech.</p>
+              </div>
+            </div>
+            <div class="system-card">
+              <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80" alt="Panasonic Econavi AC">
+                <span class="card-label">Econavi</span>
+              </div>
+              <div class="card-body">
+                <h3>Panasonic Econavi AC</h3>
+                <p>Sensors detect human activity patterns to save maximum electrical power.</p>
+              </div>
+            </div>
+            <div class="system-card">
+              <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1541888946425-d0fbb18f06f7?auto=format&fit=crop&w=600&q=80" alt="Panasonic Smart Microwave">
+                <span class="card-label">Smart Kitchen</span>
+              </div>
+              <div class="card-body">
+                <h3>Panasonic Smart Microwave</h3>
+                <p>Inverter microwave cooking technology paired with full convection.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= 4. HITACHI ================= -->
+      <div *ngSwitchCase="'hitachi'">
+        <div class="detail-hero">
+          <span class="hero-badge">Japanese Precision</span>
+          <h1>Hitachi Cooling & Home Solutions</h1>
+          <p class="hero-desc">Advanced inverter technology engineered for lasting performance.</p>
+        </div>
+        <div class="systems-section">
+          <h2>Available Systems</h2>
+          <div class="systems-grid">
+            <div class="system-card">
+              <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80" alt="Hitachi Kaze Plus Split">
+                <span class="card-label">Kaze Plus</span>
+              </div>
+              <div class="card-body">
+                <h3>Hitachi Kaze Plus Split</h3>
+                <p>High-efficiency inverter split AC with superior cooling reach.</p>
+              </div>
+            </div>
+            <div class="system-card">
+              <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="Hitachi Ducted System">
+                <span class="card-label">Ducted</span>
+              </div>
+              <div class="card-body">
+                <h3>Hitachi Ducted System</h3>
+                <p>Concealed whole-home cooling with flexible duct routing.</p>
+              </div>
+            </div>
+            <div class="system-card">
+              <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80" alt="Hitachi Ceiling Cassette">
+                <span class="card-label">Cassette</span>
+              </div>
+              <div class="card-body">
+                <h3>Hitachi Ceiling Cassette</h3>
+                <p>Uniform 4-way airflow designed for commercial interiors.</p>
+              </div>
+            </div>
+            <div class="system-card">
+              <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1541888946425-d0fbb18f06f7?auto=format&fit=crop&w=600&q=80" alt="Hitachi VRF System">
+                <span class="card-label">VRF</span>
+              </div>
+              <div class="card-body">
+                <h3>Hitachi VRF System</h3>
+                <p>Scalable commercial VRF infrastructure for large buildings.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= 5. CARRIER ================= -->
+      <div *ngSwitchCase="'carrier'">
+        <div class="detail-hero">
+          <span class="hero-badge">Inventor of AC</span>
+          <h1>Carrier Climate Solutions</h1>
+          <p class="hero-desc">Trusted worldwide for pioneering modern air conditioning.</p>
+        </div>
+        <div class="systems-section">
+          <h2>Available Systems</h2>
+          <div class="systems-grid">
+            <div class="system-card">
+              <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80" alt="Carrier Inverter Split AC">
+                <span class="card-label">Inverter</span>
+              </div>
+              <div class="card-body">
+                <h3>Carrier Inverter Split AC</h3>
+                <p>Hybrid jet technology delivering faster and deeper cooling.</p>
+              </div>
+            </div>
+            <div class="system-card">
+              <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="Carrier Cassette AC">
+                <span class="card-label">Cassette</span>
+              </div>
+              <div class="card-body">
+                <h3>Carrier Cassette AC</h3>
+                <p>Compact ceiling-mount system for uniform air distribution.</p>
+              </div>
+            </div>
+            <div class="system-card">
+              <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80" alt="Carrier Ducted System">
+                <span class="card-label">Ducted</span>
+              </div>
+              <div class="card-body">
+                <h3>Carrier Ducted System</h3>
+                <p>Hidden climate control with flexible zone management.</p>
+              </div>
+            </div>
+            <div class="system-card">
+              <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1541888946425-d0fbb18f06f7?auto=format&fit=crop&w=600&q=80" alt="Carrier VRF System">
+                <span class="card-label">VRF</span>
+              </div>
+              <div class="card-body">
+                <h3>Carrier VRF System</h3>
+                <p>High-efficiency commercial VRF for large facilities.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= 6. O GENERAL ================= -->
+      <div *ngSwitchCase="'o-general'">
+        <div class="detail-hero">
+          <span class="hero-badge">Premium Japanese</span>
+          <h1>O General Air Conditioning</h1>
+          <p class="hero-desc">Fujitsu-backed engineering built for extreme reliability.</p>
+        </div>
+        <div class="systems-section">
+          <h2>Available Systems</h2>
+          <div class="systems-grid">
+            <div class="system-card">
+              <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80" alt="O General Inverter Split">
+                <span class="card-label">Premium Split</span>
+              </div>
+              <div class="card-body">
+                <h3>O General Inverter Split</h3>
+                <p>High-ambient tropical cooling with exceptional durability.</p>
+              </div>
+            </div>
+            <div class="system-card">
+              <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="O General Cassette AC">
+                <span class="card-label">Cassette</span>
+              </div>
+              <div class="card-body">
+                <h3>O General Cassette AC</h3>
+                <p>Ceiling-recessed system designed for large commercial halls.</p>
+              </div>
+            </div>
+            <div class="system-card">
+              <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80" alt="O General Window AC">
+                <span class="card-label">Window</span>
+              </div>
+              <div class="card-body">
+                <h3>O General Window AC</h3>
+                <p>Robust window unit with long-lasting tropical performance.</p>
+              </div>
+            </div>
+            <div class="system-card">
+              <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1541888946425-d0fbb18f06f7?auto=format&fit=crop&w=600&q=80" alt="O General Ducted System">
+                <span class="card-label">Ducted</span>
+              </div>
+              <div class="card-body">
+                <h3>O General Ducted System</h3>
+                <p>Concealed premium climate control for large residences.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= 7. LG ================= -->
+      <div *ngSwitchCase="'lg'">
+        <div class="detail-hero">
+          <span class="hero-badge">Innovation</span>
+          <h1>LG Electronics & ACs</h1>
+          <p class="hero-desc">Discover LG's dual-inverter technology and smart appliances.</p>
+        </div>
+        <div class="systems-section">
+          <h2>Available Systems</h2>
+          <div class="systems-grid">
+            <div class="system-card">
+              <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80" alt="LG Dual Inverter Split">
+                <span class="card-label">Dual Inverter</span>
+              </div>
+              <div class="card-body">
+                <h3>LG Dual Inverter Split</h3>
+                <p>Faster cooling performance with remarkably lower power consumption.</p>
+              </div>
+            </div>
+            <div class="system-card">
+              <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="LG Window Smart AC">
+                <span class="card-label">Compact</span>
+              </div>
+              <div class="card-body">
+                <h3>LG Window Smart AC</h3>
+                <p>Compact cooling power designed for easy and straightforward installation.</p>
+              </div>
+            </div>
+            <div class="system-card">
+              <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80" alt="LG ThinQ Refrigerator">
+                <span class="card-label">Smart Hub</span>
+              </div>
+              <div class="card-body">
+                <h3>LG ThinQ Refrigerator</h3>
+                <p>Connected kitchen hub equipped with food management AI technology.</p>
+              </div>
+            </div>
+            <div class="system-card">
+              <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1541888946425-d0fbb18f06f7?auto=format&fit=crop&w=600&q=80" alt="LG Front Load Washer">
+                <span class="card-label">AI Care</span>
+              </div>
+              <div class="card-body">
+                <h3>LG Front Load Washer</h3>
+                <p>Advanced AI DD technology built for superior fabric care and steam washing.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= 8. SAMSUNG ================= -->
+      <div *ngSwitchCase="'samsung'">
+        <div class="detail-hero">
+          <span class="hero-badge">Smart Tech</span>
+          <h1>Samsung Smart Ecosystem</h1>
+          <p class="hero-desc">Revolutionary digital appliances and connected WindFree™ cooling.</p>
+        </div>
+        <div class="systems-section">
+          <h2>Available Systems</h2>
+          <div class="systems-grid">
+            <div class="system-card">
+              <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80" alt="Samsung WindFree AC">
+                <span class="card-label">WindFree</span>
+              </div>
+              <div class="card-body">
+                <h3>Samsung WindFree™ AC</h3>
+                <p>Draft-free cooling distributed softly through thousands of micro-holes.</p>
+              </div>
+            </div>
+            <div class="system-card">
+              <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="Samsung Bespoke Fridge">
+                <span class="card-label">Bespoke</span>
+              </div>
+              <div class="card-body">
+                <h3>Samsung Bespoke Fridge</h3>
+                <p>Customizable color glass panels and modern modular kitchen design.</p>
+              </div>
+            </div>
+            <div class="system-card">
+              <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80" alt="Samsung SmartThings Hub">
+                <span class="card-label">Automation</span>
+              </div>
+              <div class="card-body">
+                <h3>Samsung SmartThings Hub</h3>
+                <p>Centralized wireless automation for your entire connected home.</p>
+              </div>
+            </div>
+            <div class="system-card">
+              <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1541888946425-d0fbb18f06f7?auto=format&fit=crop&w=600&q=80" alt="Samsung EcoBubble Washer">
+                <span class="card-label">EcoBubble</span>
+              </div>
+              <div class="card-body">
+                <h3>Samsung EcoBubble Washer</h3>
+                <p>High-powered garment cleaning at lower active water temperatures.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= 9. BLUE STAR ================= -->
+      <div *ngSwitchCase="'blue-star'">
+        <div class="detail-hero">
+          <span class="hero-badge">Indian Innovator</span>
+          <h1>Blue Star Cooling Solutions</h1>
+          <p class="hero-desc">Precision-engineered air conditioning trusted across India.</p>
+        </div>
+        <div class="systems-section">
+          <h2>Available Systems</h2>
+          <div class="systems-grid">
+            <div class="system-card">
+              <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80" alt="Blue Star Inverter Split">
+                <span class="card-label">Inverter</span>
+              </div>
+              <div class="card-body">
+                <h3>Blue Star Inverter Split</h3>
+                <p>Precision cooling with high energy efficiency ratings.</p>
+              </div>
+            </div>
+            <div class="system-card">
+              <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="Blue Star Window AC">
+                <span class="card-label">Window</span>
+              </div>
+              <div class="card-body">
+                <h3>Blue Star Window AC</h3>
+                <p>Durable window units designed for Indian climate conditions.</p>
+              </div>
+            </div>
+            <div class="system-card">
+              <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80" alt="Blue Star Cassette AC">
+                <span class="card-label">Cassette</span>
+              </div>
+              <div class="card-body">
+                <h3>Blue Star Cassette AC</h3>
+                <p>Uniform 4-way airflow for commercial office spaces.</p>
+              </div>
+            </div>
+            <div class="system-card">
+              <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1541888946425-d0fbb18f06f7?auto=format&fit=crop&w=600&q=80" alt="Blue Star Ducted System">
+                <span class="card-label">Ducted</span>
+              </div>
+              <div class="card-body">
+                <h3>Blue Star Ducted System</h3>
+                <p>Concealed whole-home cooling with flexible zoning.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= 10. VOLTAS ================= -->
+      <div *ngSwitchCase="'voltas'">
+        <div class="detail-hero">
+          <span class="hero-badge">Trusted Indian</span>
+          <h1>Voltas Cooling Solutions</h1>
+          <p class="hero-desc">Robust air conditioning solutions tailored for tough tropical climates.</p>
+        </div>
+        <div class="systems-section">
+          <h2>Available Systems</h2>
+          <div class="systems-grid">
+            <div class="system-card">
+              <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80" alt="Voltas All Star Inverter AC">
+                <span class="card-label">Tropical</span>
+              </div>
+              <div class="card-body">
+                <h3>Voltas All Star Inverter AC</h3>
+                <p>Constant cooling performance even during intense tropical heat waves.</p>
+              </div>
+            </div>
+            <div class="system-card">
+              <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="Voltas Fixed Speed Split">
+                <span class="card-label">Reliable</span>
+              </div>
+              <div class="card-body">
+                <h3>Voltas Fixed Speed Split</h3>
+                <p>Traditional dependable cooling value delivering long service life.</p>
+              </div>
+            </div>
+            <div class="system-card">
+              <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80" alt="Voltas Window AC">
+                <span class="card-label">Sturdy</span>
+              </div>
+              <div class="card-body">
+                <h3>Voltas Window AC</h3>
+                <p>Heavy-duty window mounted units engineered for robust deployment.</p>
+              </div>
+            </div>
+            <div class="system-card">
+              <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1541888946425-d0fbb18f06f7?auto=format&fit=crop&w=600&q=80" alt="Voltas Tower Air Cooler">
+                <span class="card-label">Evaporative</span>
+              </div>
+              <div class="card-body">
+                <h3>Voltas Tower Air Cooler</h3>
+                <p>High-throw portable evaporative cooling for semi-open verandas.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= DEFAULT ================= -->
+      <div *ngSwitchDefault>
+        <div class="detail-hero">
+          <h1>Brand Not Found</h1>
+          <p class="hero-desc">Please go back and select a valid brand from the directory.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,159 @@
+/* ----- Reset & Base ----- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.brands-section {
+  padding: 3rem 1.5rem;
+  background: #f9fafc;
+}
+
+.brands-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ----- Header ----- */
+.brands-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.brands-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #033a21;
+  letter-spacing: -0.02em;
+}
+
+.brands-header p {
+  font-size: 1.125rem;
+  color: #f5b400;
+  max-width: 600px;
+  margin: 0.5rem auto 0;
+}
+
+/* ----- Grid ----- */
+.brands-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* ----- Card ----- */
+.brand-card {
+  background: #ffffff;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.brand-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+}
+
+/* ----- Image Wrapper ----- */
+.brand-image-wrapper {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.brand-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.brand-card:hover .brand-image-wrapper img {
+  transform: scale(1.05);
+}
+
+.brand-badge,
+.brand-tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #3182ce;
+  color: #fff;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.brand-tag {
+  left: auto;
+  right: 12px;
+  background: #38a169;
+}
+
+/* ----- Content ----- */
+.brand-content {
+  padding: 1.5rem;
+}
+
+.brand-content h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #033a21;
+  margin-bottom: 0.5rem;
+}
+
+.brand-content p {
+  font-size: 0.95rem;
+  color: #4a5568;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.brand-link {
+  display: inline-block;
+  font-weight: 600;
+  color: #033a21;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.brand-link:hover {
+  color: #f5b400;
+  text-decoration: underline;
+}
+
+/* ----- Responsive ----- */
+@media (max-width: 768px) {
+  .brands-section {
+    padding: 2rem 1rem;
+  }
+
+  .brands-header h2 {
+    font-size: 2rem;
+  }
+
+  .brands-header p {
+    font-size: 1rem;
+  }
+
+  .brands-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .brands-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .brand-image-wrapper {
+    height: 160px;
+  }
+}

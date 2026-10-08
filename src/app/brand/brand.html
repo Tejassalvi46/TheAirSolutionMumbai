@@ -1,0 +1,25 @@
+<section class="brands-section">
+  <div class="brands-container">
+    <div class="brands-header">
+      <h2>Our Premium Brand Partners</h2>
+      <p>Explore our selection of industry-leading climate control and electronics manufacturers.</p>
+    </div>
+
+    <div class="brands-grid">
+      <div class="brand-card" *ngFor="let brand of brands">
+        <div class="brand-image-wrapper">
+          <img [src]="brand.image" [alt]="brand.name" loading="lazy" />
+          <!-- <span class="brand-badge">{{ brand.badge }}</span>
+          <span class="brand-tag">{{ brand.tag }}</span> -->
+        </div>
+        <div class="brand-content">
+          <h3>{{ brand.name }}</h3>
+          <p>{{ brand.description }}</p>
+          <a [routerLink]="['/brand-product', brand.id]" class="brand-link">
+            View Products &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

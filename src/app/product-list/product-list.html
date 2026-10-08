@@ -1,0 +1,28 @@
+<section class="products-section">
+  <div class="products-container">
+
+    <!-- HEADER -->
+    <div class="products-header">
+      <h2>Our Products</h2>
+      <p>Stay cool and comfortable with our range of high-efficiency AC units.</p>
+    </div>
+
+    <!-- GRID -->
+    <div class="products-grid">
+      <div class="product-card" *ngFor="let product of products">
+        <div class="product-image-wrapper">
+          <img [src]="product.img" [alt]="product.name" loading="lazy" />
+        </div>
+
+        <div class="product-content">
+          <h3>{{ product.name }}</h3>
+          <p>{{ product.desc }}</p>
+          <a [routerLink]="['/product-details', product.id]" class="product-link">
+            View Details &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

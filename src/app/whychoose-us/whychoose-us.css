@@ -1,0 +1,164 @@
+/* ========================================== */
+/* GLOBAL RESET & BASE                         */
+/* ========================================== */
+:host {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #ffffff;
+}
+
+.container {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ========================================== */
+/* WHY CHOOSE US SECTION                       */
+/* ========================================== */
+.why-choose-section {
+  padding: 60px 0 80px 0;
+  background-color: #ffffff;
+}
+
+/* ---- Divider ---- */
+.section-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.section-divider::before,
+.section-divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #e5e8e6;
+}
+.divider-text {
+  padding: 0 20px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #555555;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+/* ---- Headings ---- */
+.section-title {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #033a21;
+  text-align: center;
+  margin: 0 0 10px 0;
+  line-height: 1.2;
+}
+.section-subtitle {
+  text-align: center;
+  color: #555555;
+  font-size: 1.1rem;
+  max-width: 650px;
+  margin: 0 auto 50px auto;
+  line-height: 1.6;
+}
+
+/* ---- Features Grid ---- */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* ---- Feature Card ---- */
+.feature-card {
+  background: #ffffff;
+  border: 1px solid #e5e8e6;
+  border-radius: 8px;
+  padding: 35px 25px 30px;
+  text-align: center;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  border-color: #0d6837;
+}
+
+/* ---- Icon Wrapper ---- */
+.feature-icon-wrapper {
+  width: 70px;
+  height: 70px;
+  background-color: #f1b80a; /* Yellow accent */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  flex-shrink: 0;
+  transition: background-color 0.3s ease;
+}
+.feature-card:hover .feature-icon-wrapper {
+  background-color: #dba604;
+}
+.feature-icon-wrapper span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+}
+/* The actual SVG inside spans inherits these styles */
+.feature-icon-wrapper svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* ---- Card Typography ---- */
+.feature-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #033a21;
+  margin-bottom: 8px;
+  letter-spacing: 0.3px;
+}
+.feature-card p {
+  font-size: 0.95rem;
+  color: #555555;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ========================================== */
+/* FULL RESPONSIVENESS                         */
+/* ========================================== */
+
+/* Tablet (1024px and below) */
+@media (max-width: 1024px) {
+  .section-title { font-size: 2rem; }
+  .features-grid { grid-template-columns: repeat(2, 1fr); gap: 25px; }
+}
+
+/* Mobile (768px and below) */
+@media (max-width: 768px) {
+  .why-choose-section { padding: 40px 0; }
+  .section-title { font-size: 1.6rem; }
+  .section-subtitle { font-size: 1rem; margin-bottom: 35px; padding: 0 10px; }
+  .features-grid { grid-template-columns: 1fr; gap: 20px; }
+  
+  .feature-card { padding: 25px 20px; }
+  .feature-icon-wrapper { width: 60px; height: 60px; }
+  .feature-icon-wrapper span { width: 28px; height: 28px; }
+  .feature-card h3 { font-size: 1rem; }
+  .feature-card p { font-size: 0.9rem; }
+}
+
+/* Small Mobile (480px and below) */
+@media (max-width: 480px) {
+  .section-title { font-size: 1.3rem; }
+  .divider-text { font-size: 12px; padding: 0 12px; }
+  .feature-card { padding: 20px 15px; }
+  .feature-icon-wrapper { width: 50px; height: 50px; }
+  .feature-icon-wrapper span { width: 24px; height: 24px; }
+}

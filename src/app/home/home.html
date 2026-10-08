@@ -1,0 +1,213 @@
+<!-- ========================================== -->
+<!-- HERO BANNER SECTION                         -->
+<!-- ========================================== -->
+<section class="hero-section">
+  <img src="/images/finalwp.png" class="hero-bg-img" alt="Air Conditioning Solutions">
+
+  <div class="hero-container">
+    <div class="hero-content">
+      <span class="sub-title">COMPLETE</span>
+      <h1 class="main-heading">AIR CONDITIONING<br><span class="highlight-green">SOLUTIONS</span></h1>
+
+      <div class="category-badges">
+        <span class="badge">RESIDENTIAL</span>
+        <span class="badge-separator">•</span>
+        <span class="badge">COMMERCIAL</span>
+        <span class="badge-separator">•</span>
+        <span class="badge">WHOLESALE</span>
+        <span class="badge-separator">•</span>
+        <span class="badge">PROJECTS</span>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-item">
+          <i class="fa-solid fa-award feature-icon"></i>
+          <div class="feature-text">
+            <strong>Best Prices</strong>
+            <span>Guaranteed</span>
+          </div>
+        </div>
+        <div class="feature-item">
+          <i class="fa-solid fa-shield-halved feature-icon"></i>
+          <div class="feature-text">
+            <strong>100% Original</strong>
+            <span>Products</span>
+          </div>
+        </div>
+        <div class="feature-item">
+          <i class="fa-solid fa-users-gear feature-icon"></i>
+          <div class="feature-text">
+            <strong>Authorized</strong>
+            <span>Dealer Network</span>
+          </div>
+        </div>
+        <div class="feature-item">
+          <i class="fa-solid fa-truck-fast feature-icon"></i>
+          <div class="feature-text">
+            <strong>Fast Delivery</strong>
+            <span>Pan India</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta-buttons">
+        <a href="#" class="btn btn-shop"><i class="fa-solid fa-cart-shopping"></i> SHOP AC NOW</a>
+        <a href="#" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> WHATSAPP US</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================== -->
+<!-- PRODUCTS STRIP SECTION                      -->
+<!-- ========================================== -->
+<section class="products-strip-section">
+  <div class="container">
+    <div class="products-strip-grid">
+      <div class="product-card">
+        <div class="product-img-box"><img src="/images/split.png" alt="Split AC"></div>
+        <h3>SPLIT AC</h3>
+        <p>1 Ton to 2 Ton<br>Inverter / Non-Inverter</p>
+      </div>
+      <div class="product-card">
+        <div class="product-img-box"><img src="/images/outdoor-unit (1).png" alt="Window AC"></div>
+        <h3>WINDOW AC</h3>
+        <p>1 Ton to 2 Ton<br>High Cooling</p>
+      </div>
+      <div class="product-card">
+        <div class="product-img-box"><img src="/images/air-conditioner (1).png" alt="Cassette AC"></div>
+        <h3>CASSETTE AC</h3>
+        <p>2 Way / 4 Way<br>Cassette AC</p>
+      </div>
+      <div class="product-card">
+        <div class="product-img-box"><img src="/images/zone-control.png" alt="Ductable AC"></div>
+        <h3>DUCTABLE AC</h3>
+        <p>Slim / Medium / High<br>ESP Ductable</p>
+      </div>
+      <div class="product-card">
+        <div class="product-img-box"><img src="/images/air-cooler.png" alt="Tower AC"></div>
+        <h3>TOWER AC</h3>
+        <p>High Performance<br>Cooling</p>
+      </div>
+      <div class="product-card">
+        <div class="product-img-box"><img src="/images/system.png" alt="Multi AC"></div>
+        <h3>MULTI AC</h3>
+        <p>1 Outdoor<br>Multiple Indoor</p>
+      </div>
+      <div class="product-card">
+        <div class="product-img-box"><img src="/images/air-dryer.png" alt="VRF / VRV"></div>
+        <h3>VRF / VRV</h3>
+        <p>Advanced Solution<br>For Large Spaces</p>
+      </div>
+    </div>
+
+    <div class="center-btn-box">
+      <a href="/product-list" class="btn-view-all">VIEW ALL PRODUCTS <i class="fa-solid fa-chevron-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================== -->
+<!-- BRANDS SECTION                              -->
+<!-- ========================================== -->
+<section class="brands-section">
+  <div class="container">
+    <div class="section-divider">
+      <span class="divider-text">OUR LEADING BRANDS</span>
+    </div>
+
+    <div class="brands-carousel-container">
+      <!-- PREV BUTTON -->
+      <button
+        type="button"
+        class="carousel-arrow"
+        [class.disabled]="!canScrollLeft"
+        [disabled]="!canScrollLeft"
+        (click)="scrollLeft()"
+        aria-label="Previous brands">
+        &lt;
+      </button>
+
+      <!-- SCROLLABLE LOGOS -->
+      <div class="brands-wrapper" #brandsWrapper (scroll)="onScroll()">
+        <div class="brand-logo"><img src="/images/Mitsubhushi.png" alt="Mitsubishi Electric"></div>
+        <div class="brand-logo"><img src="/images/Daikin.png" alt="Daikin"></div>
+        <div class="brand-logo"><img src="/images/Panasonic.png" alt="Panasonic"></div>
+        <div class="brand-logo"><img src="/images/Hitachi-Emblem.png" alt="Hitachi"></div>
+        <div class="brand-logo"><img src="/images/carrier-logo.png" alt="carrier"></div>
+        <div class="brand-logo"><img src="/images/genral.png" alt="genral"></div>
+        <div class="brand-logo"><img src="/images/LG-Logo.webp" alt="LG"></div>
+        <div class="brand-logo"><img src="/images/original-samsung-logo.png" alt="samsung"></div>
+        <div class="brand-logo"><img src="/images/blue-star-limited-logo-vector.png" alt="blue-star"></div>
+        <div class="brand-logo"><img src="/images/voltas-logo.png" alt="voltas"></div>
+      </div>
+
+      <!-- NEXT BUTTON -->
+      <button
+        type="button"
+        class="carousel-arrow"
+        [class.disabled]="!canScrollRight"
+        [disabled]="!canScrollRight"
+        (click)="scrollRight()"
+        aria-label="Next brands">
+        &gt;
+      </button>
+    </div>
+  </div>
+
+  <div class="center-btn-box">
+    <a href="/brand" class="btn-view-all">VIEW ALL BRANDS <i class="fa-solid fa-chevron-right"></i></a>
+  </div>
+</section>
+
+<!-- ========================================== -->
+<!-- BOTTOM FEATURES STRIP (Green Bar)           -->
+<!-- ========================================== -->
+<!-- <section class="bottom-features-section">
+  <div class="container">
+    <div class="bottom-features-grid">
+      <div class="bottom-feature-item">
+        <i class="fa-solid fa-truck bottom-icon"></i>
+        <div class="bottom-text">
+          <strong>FREE SHIPPING</strong>
+          <span>On orders above ₹999</span>
+        </div>
+      </div>
+      <div class="bottom-feature-item">
+        <i class="fa-solid fa-rotate-left bottom-icon"></i>
+        <div class="bottom-text">
+          <strong>EASY RETURNS</strong>
+          <span>7-day return policy</span>
+        </div>
+      </div>
+      <div class="bottom-feature-item">
+        <i class="fa-solid fa-headset bottom-icon"></i>
+        <div class="bottom-text">
+          <strong>24/7 SUPPORT</strong>
+          <span>Always here to help</span>
+        </div>
+      </div>
+      <div class="bottom-feature-item">
+        <i class="fa-solid fa-lock bottom-icon"></i>
+        <div class="bottom-text">
+          <strong>SECURE PAYMENT</strong>
+          <span>100% protected</span>
+        </div>
+      </div>
+      <div class="bottom-feature-item">
+        <i class="fa-solid fa-medal bottom-icon"></i>
+        <div class="bottom-text">
+          <strong>PREMIUM QUALITY</strong>
+          <span>Handpicked products</span>
+        </div>
+      </div>
+      <div class="bottom-feature-item">
+        <i class="fa-solid fa-leaf bottom-icon"></i>
+        <div class="bottom-text">
+          <strong>100% NATURAL</strong>
+          <span>No preservatives</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->

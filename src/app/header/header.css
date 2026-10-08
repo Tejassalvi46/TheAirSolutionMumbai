@@ -1,0 +1,447 @@
+/* ==========================================
+   RESET & BASE STYLES
+   ========================================== */
+:host {
+  display: block;
+  width: 100%;
+  background: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+  width: 95%;
+  max-width: 1350px;
+  margin: 0 auto;
+}
+
+a { text-decoration: none; }
+
+/* ==========================================
+   TOP BAR SECTION
+   ========================================== */
+.top-bar {
+  background: #033a21;
+  color: #fff;
+  font-size: 13px;
+  padding: 8px 0;
+  width: 100%;
+}
+
+.top-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.left-info {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.left-info .item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.right-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.right-info span { font-size: 12px; margin-right: 5px; color: #fff; }
+
+.right-info a {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: #033a21;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  
+  /* CRITICAL FIX: Hides anything that spills over the circle border */
+  overflow: hidden; 
+}
+
+/* PERFECT IMAGE SIZING */
+.right-info a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+/* Hover Effect */
+.right-info a:hover {
+  background: #ffb400;
+  transform: translateY(-2px);
+}
+
+.contact-box a:hover {
+  transform: translateY(-2px);
+}
+
+/* ==========================================
+   HEADER SECTION
+   ========================================== */
+header {
+  background: #fff;
+  padding: 15px 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  width: 100%;
+  overflow-x: hidden; /* Prevents horizontal scrollbar */
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: nowrap; /* Keeps elements on the same row */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-shrink: 0;
+}
+.top-icon-img {
+  width: 18px;       /* Slightly smaller than 25px to fit better */
+  height: 20px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.logo img { width: 215px; height: auto; }
+
+.logo-text h1 {
+  font-size: 28px;
+  color: #033a21;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.logo-text p {
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  color: #444;
+  margin-top: 4px;
+}
+
+.contact-area {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-shrink: 0;
+  flex-wrap: nowrap;
+}
+
+.contact-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.custom-icon-img {
+  width: 41px;
+  height: 48px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.contact-details small {
+  font-size: 11px;
+  color: #000;
+  display: block;
+}
+
+.contact-details h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #000;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.price-btn {
+  background: #f5b400;
+  padding: 7px 14px;
+  color: #000;
+  font-weight: 700;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(245, 180, 0, 0.3);
+}
+
+.price-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(245, 180, 0, 0.4);
+  background: #e5a900;
+}
+
+.price-btn span { font-size: 14px; }
+.price-btn small { font-size: 10px; font-weight: normal; }
+
+/* ==========================================
+   NAVIGATION SECTION
+   ========================================== */
+nav {
+  background: #033a21;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+  max-width: 1350px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.menu-toggle {
+  display: none;
+  color: #fff;
+  padding: 14px 0;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  align-items: center;
+  gap: 10px;
+  user-select: none;
+}
+
+.menu-toggle i { font-size: 22px; }
+
+.nav-menu {
+  display: flex;
+  flex-wrap: wrap; 
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+nav li {
+  position: relative;
+  background: transparent; 
+}
+
+nav a {
+  display: block;
+  padding: 15px 30px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 15px;
+  white-space: nowrap;
+  text-align: center;
+  transition: all 0.2s ease;
+  border-bottom: 3px solid transparent;
+  background: transparent; 
+}
+
+nav a:hover {
+  background: #f5b400;
+  color: #000;
+  border-bottom-color: #fff;
+}
+
+nav a.active {
+  background: #f5b400;
+  color: #000;
+  border-bottom-color: #fff;
+}
+
+nav a .fa-chevron-down {
+  font-size: 10px;
+  margin-left: 5px;
+}
+
+/* ==========================================
+   RESPONSIVE MEDIA QUERIES
+   ========================================== */
+
+/* Large Tablet & Small Laptop */
+@media(max-width: 1150px) {
+  .logo-text h1 { font-size: 24px; }
+  .logo img { width: 200px; }
+  .contact-area { gap: 15px; }
+  .contact-details h4 { font-size: 13px; }
+  .price-btn { padding: 12px 18px; }
+  .price-btn span { font-size: 12px; }
+  .custom-icon-img { width: 40px; height: 40px; }
+}
+
+/* Tablet & Small Screen Desktop */
+@media(max-width: 992px) {
+  .top-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 6px;
+  }
+  .left-info { justify-content: center; gap: 15px; }
+  
+  .header-content {
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: nowrap;
+  }
+  
+  .logo img { width: 200px; }
+  .logo-text h1 { font-size: 20px; }
+  .logo-text p { font-size: 10px; margin-top: 2px; }
+  
+  .custom-icon-img { width: 35px; height: 35px; }
+  .contact-details h4 { font-size: 12px; line-height: 1.2; }
+  .contact-details small { font-size: 8px; }
+  
+  .price-btn { padding: 8px 12px; }
+  .price-btn span { font-size: 10px; }
+  .price-btn small { font-size: 8px; }
+}
+
+/* Mobile Devices (Android & iOS) */
+@media(max-width: 768px) {
+  .top-bar { font-size: 10px; padding: 5px 0; }
+  .right-info a { width: 24px; height: 24px; font-size: 11px; }
+
+  header { padding: 8px 0; }
+
+    .top-icon-img { 
+    width: 14px; 
+    height: 14px; 
+  }
+  
+  .header-content {
+    justify-content: flex-start;
+    gap: 8px;
+    flex-wrap: nowrap !important;
+    align-items: center;
+  }
+  .right-info
+  {display: none;}
+  .logo { gap: 10px; }
+  .logo img { width: 135px; }
+  .logo-text h1 { font-size: 14px; line-height: 1; }
+  .logo-text p { font-size: 7px; margin-top: 2px; }
+
+  .contact-area { gap: 8px; flex-wrap: nowrap !important; }
+  .custom-icon-img { width: 28px; height: 28px; }
+  .contact-box { gap: 6px; }
+  .contact-details h4 { font-size: 9px; line-height: 1; }
+  .contact-details small { font-size: 6px; }
+  
+  .price-btn { padding: 4px 8px; }
+  .price-btn span { font-size: 8px; }
+  .price-btn small { font-size: 6px; }
+
+  .nav-container { width: 100%; padding: 0; margin: 0; box-sizing: border-box; }
+  .menu-toggle { display: flex; width: 100%; padding: 3px 15px; margin: 0; box-sizing: border-box; align-items: center; }
+  
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #033a21;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  }
+
+  .nav-menu.active { display: flex; }
+
+  nav li {
+    flex: none;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    display: flex; 
+    align-items: center;
+  }
+
+  nav a {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 3px 25px;
+    font-size: 13px;
+    width: 100%;
+    height: 100%;
+    white-space: normal; 
+    text-align: left;
+    box-sizing: border-box;
+    margin: 0;
+    border-bottom: none;
+  }
+
+  nav a:hover, nav a.active {
+    background: #f5b400;
+    color: #000;
+  }
+}
+
+/* ==========================================
+   EXTREMELY SMALL MOBILE (Fixes 530px - 550px)
+   ========================================== */
+@media(max-width: 550px) {
+  /* Fix Top Bar */
+  .top-bar { font-size: 7px; padding: 2px 0; }
+  .right-info a { width: 16px; height: 16px; font-size: 7px; }
+  .right-info span { font-size: 7px; }
+  .right-info
+  {display: none;}
+  /* FIX: Center the header so it doesn't stick to the left */
+  .header-content { 
+    justify-content: center !important; 
+    gap: 3px !important; 
+    flex-wrap: nowrap !important;
+  }
+   .top-icon-img { 
+    width: 10px; 
+    height: 10px; 
+  }
+  /* FIX: Make elements fit perfectly */
+  .logo { gap: 3px !important; }
+  .logo img { width: 100px !important; }
+  .logo-text h1 { font-size: 10px !important; line-height: 1; }
+  .logo-text p { font-size: 5px !important; margin: 0 !important; }
+  
+  .contact-area { gap: 2px !important; flex-wrap: nowrap !important; }
+  .custom-icon-img { width: 18px !important; height: 18px !important; }
+  .contact-box { gap: 2px !important; }
+  .contact-details small { font-size: 5px !important; }
+  .contact-details h4 { font-size: 7px !important; line-height: 1 !important; }
+  
+  .price-btn { padding: 3px 4px !important; }
+  .price-btn span { font-size: 6px !important; }
+  .price-btn small { font-size: 4px !important; }
+}

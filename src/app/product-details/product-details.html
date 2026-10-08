@@ -1,0 +1,18 @@
+<div class="detail-container" *ngIf="product">
+    <a routerLink="/product-list" class="back-btn">&larr; Back to All Products</a>
+    
+    <div class="product-detail-card">
+        <img [src]="product.img" [alt]="product.name">
+        <div class="detail-info">
+            <h1>{{ product.name }}</h1>
+            <!-- <h2 class="price">{{ product.price }}</h2> -->
+            <p class="description"><strong>Description:</strong> {{ product.desc }}</p>
+            <!-- <button class="btn" (click)="addToCart()">Add to Cart</button> -->
+        </div>
+    </div>
+</div>
+
+<div class="detail-container" *ngIf="!product">
+    <h2>Product not found!</h2>
+    <p><a routerLink="/product-list" class="back-btn">Go back to product list</a></p>
+</div>
