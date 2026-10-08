@@ -25,7 +25,7 @@ brands: Brand[] = [
     id: 'mitsubishi-electric',
     name: 'Mitsubishi Electric',
     description: 'Heavy-duty commercial and residential climate engineering with ultra-quiet operation.',
-    image: '/images/Mitsubhushi.png',
+    image: 'assets/images/Mitsubhushi.png',
     badge: 'Heavy Duty',
     tag: 'Industrial'
   },
@@ -35,7 +35,7 @@ brands: Brand[] = [
     id: 'daikin',
     name: 'Daikin',
     description: 'Global leader in HVAC systems, offering energy-efficient and reliable climate control.',
-    image: '/images/Daikin.png',
+    image: 'assets/images/Daikin.png',
     badge: 'Global Leader',
     tag: 'Premium'
   },
@@ -45,7 +45,7 @@ brands: Brand[] = [
     id: 'panasonic',
     name: 'Panasonic',
     description: 'Eco-friendly solutions with nanoe™ air purification and energy-saving tech.',
-    image: '/images/Panasonic.png',
+    image: 'assets/images/Panasonic.png',
     badge: 'Eco Friendly',
     tag: 'Clean Air'
   },
@@ -55,7 +55,7 @@ brands: Brand[] = [
     id: 'hitachi',
     name: 'Hitachi',
     description: 'Advanced Japanese inverter technology engineered for lasting performance.',
-    image: '/images/Hitachi-Emblem.png',
+    image: 'assets/images/Hitachi-Emblem.png',
     badge: 'Japanese Precision',
     tag: 'Reliable'
   },
@@ -65,7 +65,7 @@ brands: Brand[] = [
     id: 'carrier',
     name: 'Carrier',
     description: 'Pioneer of modern air conditioning with trusted global climate solutions.',
-    image: '/images/carrier-logo.png',
+    image: 'assets/images/carrier-logo.png',
     badge: 'Inventor of AC',
     tag: 'Trusted'
   },
@@ -75,7 +75,7 @@ brands: Brand[] = [
     id: 'o-general',
     name: 'O General',
     description: 'Premium Fujitsu-backed engineering built for extreme tropical reliability.',
-    image: '/images/genral.png',
+    image: 'assets/images/genral.png',
     badge: 'Premium Japanese',
     tag: 'Durable'
   },
@@ -85,7 +85,7 @@ brands: Brand[] = [
     id: 'lg',
     name: 'LG Electronics',
     description: 'Innovative dual-inverter ACs and smart appliances with AI-driven features.',
-    image: '/images/LG-Logo.webp',
+    image: 'assets/images/LG-Logo.webp',
     badge: 'Innovation',
     tag: 'Smart'
   },
@@ -95,7 +95,7 @@ brands: Brand[] = [
     id: 'samsung',
     name: 'Samsung',
     description: 'WindFree™ cooling and SmartThings ecosystem for connected living.',
-    image: '/images/original-samsung-logo.png',
+    image: 'assets/images/original-samsung-logo.png',
     badge: 'Smart Tech',
     tag: 'Ecosystem'
   },
@@ -105,7 +105,7 @@ brands: Brand[] = [
     id: 'blue-star',
     name: 'Blue Star',
     description: 'Precision-engineered air conditioning trusted across Indian homes and businesses.',
-    image: '/images/blue-star-limited-logo-vector.png',
+    image: 'assets/images/blue-star-limited-logo-vector.png',
     badge: 'Indian Innovator',
     tag: 'Precision'
   },
@@ -115,7 +115,7 @@ brands: Brand[] = [
     id: 'voltas',
     name: 'Voltas',
     description: 'Robust cooling solutions built for tropical climates, trusted across India.',
-    image: '/images/voltas-logo.png',
+    image: 'assets/images/voltas-logo.png',
     badge: 'Trusted Indian',
     tag: 'Tropical'
   }
