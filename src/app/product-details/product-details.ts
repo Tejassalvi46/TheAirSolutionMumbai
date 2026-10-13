@@ -23,7 +23,7 @@ export class ProductDetails implements OnInit {
   2: { 
     id: 2, 
     name: "Window AC", 
-    img: "/images/window-ac.jpg", 
+    img: "assets/images/window-ac.jpg", 
     price: "$349", 
     desc: "Powerful cooling meets smart savings. Our Window AC features turbo chill, anti-bacterial filtration, and whisper-quiet operation—delivering refreshing comfort with unmatched durability and style." 
   },

@@ -19,13 +19,18 @@
           "options": {
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "src/assets",
-                "output": "assets"
-              }
-            ],
+          "assets": [
+  {
+    "glob": "**/*",
+    "input": "src/assets",
+    "output": "assets"
+  },
+  {
+    "glob": "404.html",
+    "input": "src",
+    "output": "."
+  }
+],
             "styles": ["src/styles.css"]
           },
           "configurations": {
