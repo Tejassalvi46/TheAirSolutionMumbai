@@ -1,3 +1,5 @@
+/* product-list.css */
+
 /* ----- Reset & Base ----- */
 * {
   box-sizing: border-box;
@@ -9,11 +11,31 @@
   display: block;
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   background: #f9fafc;
+
+  /* Brand tokens — matched to the site header green */
+  --brand-green: #033a21;
+  --brand-green-dark: #022b18;
+  --brand-gold: #f5b400;
+  --brand-gold-soft: #ffd966;
+  --surface: #ffffff;
+  --border-light: #e2e8f0;
+  --border-hover: #cbd5e1;
+  --text-main: #374151;
+  --text-soft: #4a5568;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 12px 28px rgba(0, 0, 0, 0.08);
+  --radius-lg: 1rem;
+  --radius-md: 0.75rem;
+  --transition-smooth: 0.3s cubic-bezier(0.2, 0.9, 0.4, 1);
+
+  /* Serif stack used by the site headings (Contact / Send Us a Message) */
+  --font-serif: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
 }
 
 /* ----- Section Wrapper ----- */
 .products-section {
-  padding: 3rem 1.5rem;
+  padding: 3.5rem 1.5rem 4rem;
   background: #f9fafc;
 }
 
@@ -22,65 +44,114 @@
   margin: 0 auto;
 }
 
-/* ----- Header ----- */
-.products-header {
-  text-align: center;
-  margin-bottom: 3rem;
+/* ==========================================
+   DYNAMIC SCROLL REVEAL
+   ========================================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px) scale(0.97);
+  transition:
+    opacity 0.8s cubic-bezier(0.2, 0.9, 0.3, 1),
+    transform 0.8s cubic-bezier(0.2, 0.9, 0.3, 1),
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+  will-change: opacity, transform;
 }
 
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.reveal.delay-1 { transition-delay: 0.1s; }
+.reveal.delay-2 { transition-delay: 0.2s; }
+
+/* ==========================================
+   HEADER — matches the About page title box
+   ========================================== */
+.products-header {
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 32px 32px 28px;
+  margin-bottom: 3rem;
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+  transition:
+    box-shadow var(--transition-smooth),
+    border-color var(--transition-smooth),
+    transform var(--transition-smooth);
+}
+
+.products-header:hover {
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+/* Serif heading — matches "Contact Our AC Experts" style */
 .products-header h2 {
-  font-size: 2.5rem;
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 700;
-  color: #033a21;
-  letter-spacing: -0.02em;
+  color: var(--brand-green);          /* same deep green as navbar */
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  margin-bottom: 0.75rem;
+  transition: color var(--transition-smooth);
+}
+
+.products-header h2:hover {
+  color: var(--brand-green-dark);
 }
 
 .products-header p {
-  font-size: 1.125rem;
-  color: #f5b400;
-  max-width: 600px;
-  margin: 0.5rem auto 0;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-size: clamp(0.95rem, 2vw, 1.125rem);
+  color: var(--brand-gold);
+  max-width: 640px;
+  margin: 0 auto;
+  line-height: 1.65;
 }
 
-/* ----- Grid: 3 columns on desktop ----- */
+/* ==========================================
+   GRID — auto-fit for full fluidity
+   ========================================== */
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
 }
 
-/* ========================================== */
-/* CARD — DEFAULT BORDER #033a21, HOVER #f5b400 */
-/* ========================================== */
+/* ==========================================
+   PRODUCT CARD
+   ========================================== */
 .product-card {
-  background: #ffffff;
-  border-radius: 1rem;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
   overflow: hidden;
-
-  /* DEFAULT BORDER (dark green) */
-  /* border: 1px solid #033a21; */
+  border: 1px solid transparent;
 
   box-shadow:
     0 10px 9px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
   transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    border-color 0.3s ease;
+    transform var(--transition-smooth),
+    box-shadow var(--transition-smooth),
+    border-color var(--transition-smooth);
 
   display: flex;
   flex-direction: column;
 }
 
 .product-card:hover {
-  transform: translateY(-4px);
-
-  /* HOVER BORDER (yellow / gold) */
-  border-color: #f5b400;
+  transform: translateY(-8px);
+  border-color: var(--brand-gold);
 
   box-shadow:
-    0 10px 15px -3px rgba(114, 112, 107, 0.25),
-    0 4px 6px -2px rgba(114, 112, 107, 0.25);
+    0 20px 30px -8px rgba(3, 58, 33, 0.18),
+    0 8px 14px -4px rgba(245, 180, 0, 0.18);
 }
 
 /* ----- Image Wrapper ----- */
@@ -94,16 +165,38 @@
   justify-content: center;
 }
 
+.product-image-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(245, 180, 0, 0.12) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.product-card:hover .product-image-wrapper::after {
+  opacity: 1;
+}
+
 .product-image-wrapper img {
   width: 100%;
-  height: 125%;            /* FIXED: was 300px inside a 200px box */
-  object-fit: contain;     /* show full product, no cropping */
-  padding: 1.25rem;        /* breathing room around the product */
-  transition: transform 0.3s ease;
+  height: 125%;
+  object-fit: contain;
+  padding: 1.25rem;
+  transition: transform 0.6s cubic-bezier(0.2, 0.9, 0.4, 1);
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 .product-card:hover .product-image-wrapper img {
-  transform: scale(1.05);
+  transform: scale(1.08) rotate(-1deg);
 }
 
 /* ----- Content ----- */
@@ -115,20 +208,24 @@
 }
 
 .product-content h3 {
-  font-size: 1.25rem;
+  font-size: clamp(1.1rem, 2vw, 1.25rem);
   font-weight: 600;
-  color: #033a21;
+  color: var(--brand-green);
   margin-bottom: 0.5rem;
+  transition: color var(--transition-smooth);
+}
+
+.product-card:hover .product-content h3 {
+  color: var(--brand-gold);
 }
 
 .product-content p {
-  font-size: 0.95rem;
-  color: #4a5568;
-  line-height: 1.6;
+  font-size: clamp(0.85rem, 1.6vw, 0.95rem);
+  color: var(--text-soft);
+  line-height: 1.65;
   margin-bottom: 1rem;
   flex-grow: 1;
 
-  /* clamp to 4 lines so all cards align */
   display: -webkit-box;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
@@ -137,52 +234,91 @@
 
 /* ----- Link ----- */
 .product-link {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
   font-weight: 600;
-  color: #033a21;
+  color: var(--brand-green);
   text-decoration: none;
-  transition: color 0.2s ease;
   margin-top: auto;
+  position: relative;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.product-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  height: 2px;
+  width: 0;
+  background: var(--brand-gold);
+  transition: width 0.3s ease;
 }
 
 .product-link:hover {
-  color: #f5b400;
-  text-decoration: underline;
+  color: var(--brand-gold);
+  transform: translateX(4px);
 }
 
-/* ================================================ */
-/* RESPONSIVE                                       */
-/* ================================================ */
+.product-link:hover::after {
+  width: 100%;
+}
 
-/* Tablet — 2 columns (992px and below) */
-@media (max-width: 992px) {
+/* ==========================================
+   RESPONSIVE — TABLET
+   ========================================== */
+@media (max-width: 1024px) {
+  .products-section {
+    padding: 3rem 1.25rem 3.5rem;
+  }
+
+  .products-header {
+    padding: 28px 26px 24px;
+    margin-bottom: 2.5rem;
+  }
+
   .products-grid {
-    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
 }
 
-/* Small tablet / large mobile (768px and below) */
+/* ==========================================
+   RESPONSIVE — SMALL TABLET / LARGE MOBILE
+   ========================================== */
 @media (max-width: 768px) {
   .products-section {
-    padding: 2rem 1rem;
+    padding: 2.5rem 1rem 3rem;
   }
 
   .products-header {
+    padding: 24px 22px 20px;
     margin-bottom: 2rem;
   }
 
-  .products-header h2 {
-    font-size: 2rem;
+  .products-grid {
+    gap: 1.25rem;
   }
 
-  .products-header p {
-    font-size: 1rem;
+  .reveal {
+    transform: translateY(24px) scale(0.98);
   }
 }
 
-/* Mobile — 1 column (576px and below) */
+/* ==========================================
+   RESPONSIVE — MOBILE
+   ========================================== */
 @media (max-width: 576px) {
+  .products-section {
+    padding: 2rem 1rem 2.5rem;
+  }
+
+  .products-header {
+    padding: 20px 18px 18px;
+    border-radius: var(--radius-md);
+    margin-bottom: 1.5rem;
+  }
+
   .products-grid {
     grid-template-columns: 1fr;
     gap: 1.25rem;
@@ -196,24 +332,29 @@
     padding: 1.25rem;
   }
 
-  .product-content h3 {
-    font-size: 1.15rem;
+  .product-content p {
+    -webkit-line-clamp: 5;
   }
 
-  .product-content p {
-    font-size: 0.9rem;
-    -webkit-line-clamp: 5;
+  .product-card:hover {
+    transform: translateY(-4px);
   }
 }
 
-/* Extra small mobile (380px and below) */
+/* ==========================================
+   RESPONSIVE — VERY SMALL PHONES
+   ========================================== */
 @media (max-width: 380px) {
   .products-section {
-    padding: 1.5rem 0.75rem;
+    padding: 1.5rem 0.75rem 2rem;
+  }
+
+  .products-header {
+    padding: 16px 16px 14px;
   }
 
   .products-header h2 {
-    font-size: 1.6rem;
+    font-size: 1.75rem;
   }
 
   .products-header p {
@@ -223,4 +364,57 @@
   .product-image-wrapper {
     height: 170px;
   }
+}
+
+/* ==========================================
+   TOUCH / POINTER TWEAKS
+   ========================================== */
+.product-card,
+.product-link,
+.products-header {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .product-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .product-card:hover .product-image-wrapper img {
+    transform: scale(1.04);
+  }
+
+  .product-link:hover {
+    transform: none;
+  }
+
+  .products-header:hover {
+    transform: none;
+  }
+}
+
+/* ==========================================
+   REDUCED MOTION ACCESSIBILITY
+   ========================================== */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .product-card,
+  .product-image-wrapper img,
+  .product-link,
+  .products-header {
+    transition: none;
+  }
+}
+
+/* ==========================================
+   NO-JS FALLBACK
+   ========================================== */
+.no-js .reveal {
+  opacity: 1;
+  transform: none;
 }

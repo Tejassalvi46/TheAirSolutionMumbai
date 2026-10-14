@@ -1,13 +1,41 @@
-/* ----- Reset & Base ----- */
+/* brand.css */
+
+/* ==========================================
+   RESET & BRAND TOKENS
+   ========================================== */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+:host {
+  display: block;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #ffffff;
+
+  /* Same brand tokens as About + Product List */
+  --brand-green: #033a21;
+  --brand-green-dark: #022b18;
+  --brand-gold: #f5b400;
+  --text-main: #374151;
+  --text-soft: #4b5563;
+  --surface: #ffffff;
+  --border-light: #e2e8f0;
+  --border-hover: #cbd5e1;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
+  --radius-lg: 16px;
+  --radius-md: 14px;
+  --transition-smooth: 0.3s cubic-bezier(0.2, 0.9, 0.4, 1);
+}
+
+/* ==========================================
+   SECTION WRAPPER
+   ========================================== */
 .brands-section {
-  padding: 3rem 1.5rem;
-  background: #f9fafc;
+  padding: 30px 20px 60px;
+  background: #ffffff;
 }
 
 .brands-container {
@@ -15,45 +43,105 @@
   margin: 0 auto;
 }
 
-/* ----- Header ----- */
+/* ==========================================
+   DYNAMIC SCROLL REVEAL
+   ========================================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px) scale(0.98);
+  transition:
+    opacity 0.75s cubic-bezier(0.2, 0.9, 0.3, 1),
+    transform 0.75s cubic-bezier(0.2, 0.9, 0.3, 1),
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+  will-change: opacity, transform;
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.reveal.delay-1 { transition-delay: 0.08s; }
+.reveal.delay-2 { transition-delay: 0.16s; }
+
+/* ==========================================
+   HEADER — same style as About page title box
+   ========================================== */
 .brands-header {
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 18px 26px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-sm);
   text-align: center;
-  margin-bottom: 3rem;
+  transition:
+    box-shadow var(--transition-smooth),
+    border-color var(--transition-smooth);
+}
+
+.brands-header:hover {
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-md);
 }
 
 .brands-header h2 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #033a21;
-  letter-spacing: -0.02em;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--brand-green);
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  margin: 0 0 4px 0;
+  transition: color var(--transition-smooth);
+}
+
+.brands-header h2:hover {
+  color: var(--brand-green-dark);
 }
 
 .brands-header p {
-  font-size: 1.125rem;
-  color: #f5b400;
-  max-width: 600px;
-  margin: 0.5rem auto 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--brand-gold);
+  line-height: 1.6;
+  max-width: 640px;
+  margin: 0 auto;
 }
 
-/* ----- Grid ----- */
+/* ==========================================
+   GRID — auto-fit for full fluidity
+   ========================================== */
 .brands-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
 }
 
-/* ----- Card ----- */
+/* ==========================================
+   BRAND CARD
+   ========================================== */
 .brand-card {
-  background: #ffffff;
-  border-radius: 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
   overflow: hidden;
-  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform var(--transition-smooth),
+    box-shadow var(--transition-smooth),
+    border-color var(--transition-smooth);
+
+  display: flex;
+  flex-direction: column;
 }
 
 .brand-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-md);
 }
 
 /* ----- Image Wrapper ----- */
@@ -61,99 +149,267 @@
   position: relative;
   height: 200px;
   overflow: hidden;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
 }
 
 .brand-image-wrapper img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
+  object-fit: contain;
+  transition: transform 0.5s cubic-bezier(0.2, 0.9, 0.4, 1);
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
+/* Hover — matches product-list img zoom */
 .brand-card:hover .brand-image-wrapper img {
   transform: scale(1.05);
 }
 
+/* ----- Badges (kept same, still available) ----- */
 .brand-badge,
 .brand-tag {
   position: absolute;
   top: 12px;
   left: 12px;
-  background: #3182ce;
+  background: var(--brand-green);
   color: #fff;
   padding: 4px 14px;
   border-radius: 20px;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  transition: background var(--transition-smooth);
 }
 
 .brand-tag {
   left: auto;
   right: 12px;
-  background: #38a169;
+  background: var(--brand-gold);
+  color: #ffffff;
+}
+
+.brand-card:hover .brand-badge {
+  background: var(--brand-green-dark);
+}
+
+.brand-card:hover .brand-tag {
+  background: #d99c00;
 }
 
 /* ----- Content ----- */
 .brand-content {
-  padding: 1.5rem;
+  padding: 22px 26px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .brand-content h3 {
-  font-size: 1.25rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.05rem;
   font-weight: 600;
-  color: #033a21;
-  margin-bottom: 0.5rem;
+  color: var(--brand-green);
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  line-height: 1.4;
+  transition: color var(--transition-smooth);
+}
+
+.brand-card:hover .brand-content h3 {
+  color: var(--brand-green-dark);
 }
 
 .brand-content p {
-  font-size: 0.95rem;
-  color: #4a5568;
-  line-height: 1.6;
-  margin-bottom: 1rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.92rem;
+  color: var(--text-soft);
+  line-height: 1.7;
+  margin-bottom: 14px;
+  flex-grow: 1;
 }
 
+/* ----- Link (kept same behavior) ----- */
 .brand-link {
   display: inline-block;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.92rem;
   font-weight: 600;
-  color: #033a21;
+  color: var(--brand-green);
   text-decoration: none;
-  transition: color 0.2s ease;
+  margin-top: auto;
+  transition: color 0.25s ease, transform 0.25s ease;
 }
 
 .brand-link:hover {
-  color: #f5b400;
+  color: var(--brand-gold);
   text-decoration: underline;
+  transform: translateX(3px);
 }
 
-/* ----- Responsive ----- */
-@media (max-width: 768px) {
+/* ==========================================
+   RESPONSIVE — TABLET
+   ========================================== */
+@media (max-width: 992px) {
   .brands-section {
-    padding: 2rem 1rem;
+    padding: 24px 16px 50px;
+  }
+
+  .brands-header {
+    padding: 18px 24px;
+    margin-bottom: 18px;
   }
 
   .brands-header h2 {
-    font-size: 2rem;
+    font-size: 1.4rem;
   }
 
-  .brands-header p {
+  .brands-grid {
+    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+
+  .brand-content h3 {
     font-size: 1rem;
   }
 
-  .brands-grid {
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 1.5rem;
+  .brand-content p {
+    font-size: 0.9rem;
   }
 }
 
-@media (max-width: 480px) {
+/* ==========================================
+   RESPONSIVE — MOBILE
+   ========================================== */
+@media (max-width: 600px) {
+  .brands-section {
+    padding: 20px 12px 40px;
+  }
+
+  .brands-header {
+    padding: 14px 18px;
+    border-radius: var(--radius-md);
+    margin-bottom: 16px;
+  }
+
+  .brands-header h2 {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+  }
+
+  .brands-header p {
+    font-size: 0.88rem;
+  }
+
   .brands-grid {
     grid-template-columns: 1fr;
-    gap: 1.25rem;
+    gap: 14px;
+  }
+
+  .brand-image-wrapper {
+    height: 180px;
+  }
+
+  .brand-content {
+    padding: 18px 18px;
+  }
+
+  .brand-content h3 {
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+  }
+
+  .brand-content p {
+    font-size: 0.88rem;
+    line-height: 1.7;
+  }
+}
+
+/* ==========================================
+   RESPONSIVE — VERY SMALL PHONES
+   ========================================== */
+@media (max-width: 380px) {
+  .brands-section {
+    padding: 16px 12px 40px;
+  }
+
+  .brands-header h2 {
+    font-size: 1.05rem;
+  }
+
+  .brands-header p {
+    font-size: 0.82rem;
   }
 
   .brand-image-wrapper {
     height: 160px;
   }
+
+  .brand-content {
+    padding: 16px 16px;
+  }
+
+  .brand-content h3 {
+    font-size: 0.88rem;
+  }
+
+  .brand-content p {
+    font-size: 0.82rem;
+  }
+}
+
+/* ==========================================
+   TOUCH / POINTER TWEAKS
+   ========================================== */
+.brand-card,
+.brand-link,
+.brands-header {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .brand-card:hover {
+    transform: translateY(-2px);
+  }
+
+  .brand-card:hover .brand-image-wrapper img {
+    transform: scale(1.02);
+  }
+
+  .brand-link:hover {
+    transform: none;
+  }
+}
+
+/* ==========================================
+   REDUCED MOTION ACCESSIBILITY
+   ========================================== */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .brand-card,
+  .brand-image-wrapper img,
+  .brand-link {
+    transition: none;
+  }
+}
+
+/* ==========================================
+   NO-JS FALLBACK
+   ========================================== */
+.no-js .reveal {
+  opacity: 1;
+  transform: none;
 }

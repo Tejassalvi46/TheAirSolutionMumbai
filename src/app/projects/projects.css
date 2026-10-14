@@ -1,3 +1,5 @@
+/* projects.css */
+
 /* ==========================================
    GLOBAL RESETS
    ========================================== */
@@ -7,90 +9,125 @@
   padding: 0;
 }
 
+:host {
+  display: block;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #ffffff;
+
+  --brand-green: #033a21;
+  --brand-green-dark: #022b18;
+  --brand-gold: #f5b400;
+  --text-main: #374151;
+  --text-soft: #4b5563;
+  --surface: #ffffff;
+  --border-light: #e2e8f0;
+  --border-hover: #cbd5e1;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
+  --radius-lg: 16px;
+  --radius-md: 14px;
+  --transition-smooth: 0.3s cubic-bezier(0.2, 0.9, 0.4, 1);
+}
+
 /* ==========================================
    PAGE WRAPPER
    ========================================== */
 .projects-page {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 30px 20px 60px 20px;
+  padding: 30px 20px 60px;
   background: #ffffff;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* ==========================================
-   PAGE TITLE BOX — "PROJECTS"
-   ✅ Rounded corners like Contact Us cards
+   DYNAMIC SCROLL REVEAL
+   ========================================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px) scale(0.98);
+  transition:
+    opacity 0.75s cubic-bezier(0.2, 0.9, 0.3, 1),
+    transform 0.75s cubic-bezier(0.2, 0.9, 0.3, 1),
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+  will-change: opacity, transform;
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* ==========================================
+   PAGE TITLE BOX
    ========================================== */
 .page-title-box {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 16px;              /* ✅ Rounded */
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
   padding: 18px 26px;
   margin-bottom: 20px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-  transition: box-shadow 0.25s ease, border-color 0.25s ease;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition-smooth), border-color var(--transition-smooth);
 }
 
 .page-title-box:hover {
-  border-color: #cbd5e1;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-md);
 }
 
 .page-title-box h1 {
   font-size: 1.6rem;
-  font-weight: 500;
-  color: #4b5563;
+  font-weight: 600;
+  color: var(--brand-green);
   letter-spacing: 1.2px;
   text-transform: uppercase;
   margin: 0;
-  transition: color 0.25s ease;
+  transition: color var(--transition-smooth);
 }
 
 .page-title-box h1:hover {
-  color: #dc2626;
+  color: var(--brand-green-dark);
 }
 
 /* ==========================================
-   CATEGORY TITLE BOX — "DATA COMP" etc.
-   ✅ Rounded corners + soft shadow
+   CATEGORY TITLE BOX
    ========================================== */
 .category-title-box {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;              /* ✅ Rounded */
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
   padding: 12px 22px;
   margin-bottom: 18px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-  transition: box-shadow 0.25s ease, border-color 0.25s ease;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition-smooth), border-color var(--transition-smooth);
 }
 
-/* Gap above each category (except first) */
 .category-title-box:not(:first-of-type) {
   margin-top: 30px;
 }
 
 .category-title-box:hover {
-  border-color: #cbd5e1;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-md);
 }
 
 .category-title-box h2 {
   font-size: 1rem;
-  font-weight: 500;
-  color: #dc2626;
+  font-weight: 600;
+  color: var(--brand-green);
   letter-spacing: 0.8px;
   text-transform: uppercase;
   margin: 0;
-  transition: color 0.25s ease;
+  transition: color var(--transition-smooth);
 }
 
 .category-title-box h2:hover {
-  color: #991b1b;
+  color: var(--brand-green-dark);
 }
 
 /* ==========================================
-   PROJECTS GRID — FIXED 3 COLUMNS PER ROW
+   PROJECTS GRID — 3 columns
    ========================================== */
 .projects-grid {
   display: grid;
@@ -100,35 +137,36 @@
 }
 
 /* ==========================================
-   SINGLE PROJECT CARD
-   ✅ Rounded corners + soft shadow + hover lift
+   PROJECT CARD
    ========================================== */
 .project-card {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 14px;              /* ✅ Rounded */
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
   padding: 12px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-  transition: transform 0.25s ease, box-shadow 0.25s ease,
-              border-color 0.25s ease;
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform var(--transition-smooth),
+    box-shadow var(--transition-smooth),
+    border-color var(--transition-smooth);
 }
 
 .project-card:hover {
-  transform: translateY(-3px);
-  border-color: #cbd5e1;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transform: translateY(-4px);
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-md);
 }
 
 /* ==========================================
-   IMAGE WRAPPER — rounded corners + clipped zoom
+   IMAGE WRAPPER — clipped zoom
    ========================================== */
 .project-img-wrapper {
   width: 100%;
   aspect-ratio: 4 / 3;
   overflow: hidden;
-  border-radius: 10px;              /* ✅ Rounded inner */
-  background: #f8fafc;
+  border-radius: 10px;
+  background: #f1f5f9;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -139,28 +177,24 @@
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.4s ease;
+  transition: transform 0.5s cubic-bezier(0.2, 0.9, 0.4, 1);
   will-change: transform;
 
-  /* iOS rendering */
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   transform: translateZ(0);
 }
 
-/* ✅ ZOOM ON HOVER */
 .project-card:hover .project-img-wrapper img {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 /* ==========================================
-   RESPONSIVE DESIGN
+   RESPONSIVE — TABLET (2 columns)
    ========================================== */
-
-/* Tablet (iPad) — 2 columns */
 @media (max-width: 992px) {
   .projects-page {
-    padding: 24px 16px 50px 16px;
+    padding: 24px 16px 50px;
   }
 
   .projects-grid {
@@ -168,22 +202,33 @@
     gap: 18px;
   }
 
-  .page-title-box { padding: 16px 22px; }
-  .page-title-box h1 { font-size: 1.4rem; }
-  .category-title-box h2 { font-size: 0.95rem; }
+  .page-title-box {
+    padding: 16px 22px;
+  }
+
+  .page-title-box h1 {
+    font-size: 1.4rem;
+  }
+
+  .category-title-box h2 {
+    font-size: 0.95rem;
+  }
 }
 
-/* Mobile — 1 column */
+/* ==========================================
+   RESPONSIVE — MOBILE (1 column)
+   ========================================== */
 @media (max-width: 600px) {
   .projects-page {
-    padding: 20px 12px 40px 12px;
+    padding: 20px 12px 40px;
   }
 
   .page-title-box {
     padding: 14px 18px;
-    border-radius: 14px;
+    border-radius: var(--radius-md);
     margin-bottom: 16px;
   }
+
   .page-title-box h1 {
     font-size: 1.2rem;
     letter-spacing: 1px;
@@ -194,9 +239,11 @@
     border-radius: 10px;
     margin-bottom: 14px;
   }
+
   .category-title-box:not(:first-of-type) {
     margin-top: 24px;
   }
+
   .category-title-box h2 {
     font-size: 0.88rem;
   }
@@ -216,15 +263,26 @@
   }
 }
 
-/* Very small phones (iPhone SE) */
+/* ==========================================
+   RESPONSIVE — VERY SMALL PHONES
+   ========================================== */
 @media (max-width: 380px) {
-  .page-title-box h1 { font-size: 1.05rem; }
-  .category-title-box h2 { font-size: 0.82rem; }
-  .project-card { padding: 8px; border-radius: 10px; }
+  .page-title-box h1 {
+    font-size: 1.05rem;
+  }
+
+  .category-title-box h2 {
+    font-size: 0.82rem;
+  }
+
+  .project-card {
+    padding: 8px;
+    border-radius: 10px;
+  }
 }
 
 /* ==========================================
-   iOS & ANDROID TOUCH TWEAKS
+   TOUCH / POINTER TWEAKS
    ========================================== */
 .project-card,
 .project-img-wrapper img {
@@ -233,9 +291,26 @@
 
 @media (hover: none) and (pointer: coarse) {
   .project-card:hover {
-    transform: none;                /* Skip lift on touch */
+    transform: translateY(-2px);
   }
+
   .project-card:hover .project-img-wrapper img {
-    transform: scale(1.05);         /* Gentler zoom on touch */
+    transform: scale(1.03);
+  }
+}
+
+/* ==========================================
+   REDUCED MOTION
+   ========================================== */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .project-card,
+  .project-img-wrapper img {
+    transition: none;
   }
 }

@@ -1,15 +1,33 @@
-<div class="contact-page">
-  <!-- Header -->
-  <header class="contact-header">
-    <h1>Contact Our AC Experts</h1>
-    <p>Need emergency repair, routine maintenance, or a new installation? We are here to keep you cool and comfortable.</p>
-  </header>
+<!-- contact-us.html -->
+<div class="about-page" #contactPage>
 
-  <!-- Main Grid -->
-  <div class="contact-grid">
-    <!-- Left: Info Cards with Images / Logos -->
-    <div class="info-cards">
-      <!-- 24/7 Hotline -->
+  <!-- =========================================
+       PAGE TITLE
+       ========================================= -->
+  <div class="page-title-box reveal">
+    <h1>CONTACT OUR AC EXPERTS</h1>
+  </div>
+
+  <!-- =========================================
+       INTRO / HEADER PARAGRAPH
+       ========================================= -->
+  <div class="intro-box reveal">
+    <p>
+      Need emergency repair, routine maintenance, or a new installation?
+      We are here to keep you cool and comfortable. Reach out to
+      <strong>THE AIR SOLUTIONS</strong> through any of the channels below,
+      or send us a message directly using the contact form.
+    </p>
+  </div>
+
+  <!-- =========================================
+       MAIN GRID — Info Cards + Form
+       ========================================= -->
+  <div class="content-grid contact-grid">
+
+    <!-- LEFT: Info Cards -->
+    <div class="text-box info-cards reveal delay-1">
+
       <div class="info-card">
         <div class="card-logo-wrapper">
           <img src="assets/images/phone.png" alt="Emergency Hotline" loading="lazy">
@@ -20,7 +38,6 @@
         </div>
       </div>
 
-      <!-- Email Support -->
       <div class="info-card">
         <div class="card-logo-wrapper">
           <img src="assets/images/email (1).png" alt="Email Support" loading="lazy">
@@ -32,7 +49,6 @@
         </div>
       </div>
 
-      <!-- Office Address -->
       <div class="info-card">
         <div class="card-logo-wrapper">
           <img src="assets/images/gps.png" alt="Office Address" loading="lazy">
@@ -43,7 +59,6 @@
         </div>
       </div>
 
-      <!-- Working Hours -->
       <div class="info-card">
         <div class="card-logo-wrapper">
           <img src="assets/images/clock.png" alt="Working Hours" loading="lazy">
@@ -53,34 +68,42 @@
           <p>Mon – Sat: 8:00 AM – 8:00 PM<br>Emergency: 24/7</p>
         </div>
       </div>
+
     </div>
 
-    <!-- Right: Form + Notes -->
-    <div class="form-notes">
-      <!-- Admin Access Button -->
+    <!-- RIGHT: Form + Notes -->
+    <div class="text-box form-notes reveal delay-2">
+
+      <!-- Admin Button -->
       <div class="admin-access-bar">
         <button class="btn-admin" (click)="openAdminModal()" type="button">
           🔒 Admin Access
         </button>
       </div>
 
-      <!-- Form -->
+      <!-- Contact Form -->
       <form #contactForm="ngForm" (ngSubmit)="onSubmit()" class="contact-form">
         <h2>Send Us a Message</h2>
 
         <div class="form-group">
           <label for="name">Full Name <span class="required">*</span></label>
-          <input type="text" id="name" name="name" [(ngModel)]="formData.name" placeholder="Your full name" required>
+          <input type="text" id="name" name="name"
+                 [(ngModel)]="formData.name"
+                 placeholder="Your full name" required>
         </div>
 
         <div class="form-group">
           <label for="email">Email Address <span class="required">*</span></label>
-          <input type="email" id="email" name="email" [(ngModel)]="formData.email" placeholder="Your email" required>
+          <input type="email" id="email" name="email"
+                 [(ngModel)]="formData.email"
+                 placeholder="Your email" required>
         </div>
 
         <div class="form-group">
           <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" name="phone" [(ngModel)]="formData.phone" placeholder="Your phone number">
+          <input type="tel" id="phone" name="phone"
+                 [(ngModel)]="formData.phone"
+                 placeholder="Your phone number">
         </div>
 
         <div class="form-group">
@@ -95,59 +118,77 @@
 
         <div class="form-group">
           <label for="message">Message / Issue</label>
-          <textarea id="message" name="message" [(ngModel)]="formData.message" rows="4" placeholder="Describe your issue..."></textarea>
+          <textarea id="message" name="message"
+                    [(ngModel)]="formData.message" rows="4"
+                    placeholder="Describe your issue..."></textarea>
         </div>
 
         <button type="submit" class="btn-submit">Submit Request</button>
 
-        <div *ngIf="isSubmitted" class="success-toast">✅ Request saved to notes!</div>
+        <div *ngIf="isSubmitted" class="success-toast">
+          ✅ Request saved to notes!
+        </div>
       </form>
 
-      <!-- Notes Section (only visible after admin login) -->
+      <!-- Saved Requests (admin only) -->
       <div class="notes-section" *ngIf="isAdminLoggedIn">
         <div class="notes-header">
           <h3>📝 Saved Requests</h3>
           <div class="notes-actions">
-            <button class="btn-download" (click)="downloadNote()">⬇ Download .txt</button>
-            <button class="btn-clear" (click)="clearRequests()">🗑 Clear</button>
+            <button class="btn-download" (click)="downloadNote()" type="button">⬇ Download .txt</button>
+            <button class="btn-clear" (click)="clearRequests()" type="button">🗑 Clear</button>
           </div>
         </div>
 
-        <p *ngIf="savedRequests.length === 0" class="empty-notes">No requests yet. Submit the form to add one.</p>
+        <p *ngIf="savedRequests.length === 0" class="empty-notes">
+          No requests yet. Submit the form to add one.
+        </p>
 
-        <div *ngFor="let req of savedRequests; let i = index" class="note-item">
+        <div *ngFor="let req of savedRequests" class="note-item">
           <div class="note-date">{{ req.date }}</div>
           <div><strong>{{ req.name }}</strong> ({{ req.email }})</div>
           <div>Service: {{ req.service || 'N/A' }}</div>
           <div class="note-message">{{ req.message || 'No message' }}</div>
         </div>
       </div>
+
     </div>
+
   </div>
+
 </div>
 
-<!-- ===== ADMIN LOGIN MODAL ===== -->
-<div class="modal-overlay" [class.active]="showAdminModal" (click)="onModalOverlayClick($event)">
+<!-- =========================================
+     ADMIN LOGIN MODAL
+     ========================================= -->
+<div class="modal-overlay" [class.active]="showAdminModal"
+     (click)="onModalOverlayClick($event)">
   <div class="modal-content">
     <h3>🔐 Admin Login</h3>
     <p>Enter credentials to view saved requests.</p>
 
     <div class="modal-field">
       <label for="adminUsername">Username</label>
-      <input type="text" id="adminUsername" [(ngModel)]="adminUsername" placeholder="Admin" autocomplete="off">
+      <input type="text" id="adminUsername"
+             [(ngModel)]="adminUsername"
+             placeholder="Admin" autocomplete="off">
     </div>
 
     <div class="modal-field">
       <label for="adminPassword">Password</label>
-      <input type="password" id="adminPassword" [(ngModel)]="adminPassword" placeholder="••••••••" autocomplete="off"
+      <input type="password" id="adminPassword"
+             [(ngModel)]="adminPassword"
+             placeholder="••••••••" autocomplete="off"
              (keyup.enter)="attemptAdminLogin()">
     </div>
 
     <div *ngIf="loginError" class="modal-error">{{ loginError }}</div>
 
     <div class="modal-actions">
-      <button class="btn-modal btn-modal-cancel" (click)="closeAdminModal()" type="button">Cancel</button>
-      <button class="btn-modal btn-modal-login" (click)="attemptAdminLogin()" type="button">Login</button>
+      <button class="btn-modal btn-modal-cancel"
+              (click)="closeAdminModal()" type="button">Cancel</button>
+      <button class="btn-modal btn-modal-login"
+              (click)="attemptAdminLogin()" type="button">Login</button>
     </div>
   </div>
 </div>

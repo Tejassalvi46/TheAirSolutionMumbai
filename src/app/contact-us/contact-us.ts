@@ -1,18 +1,30 @@
-import { Component } from '@angular/core';
+// contact-us.ts
+import {
+  Component,
+  AfterViewInit,
+  OnDestroy,
+  ElementRef,
+  ViewChild,
+  Inject,
+  PLATFORM_ID,
+} from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-contact-us',
   standalone: true,
   imports: [FormsModule, CommonModule],
   templateUrl: './contact-us.html',
-  styleUrls: ['./contact-us.css']
+  styleUrls: ['./contact-us.css'],
 })
-export class ContactUsComponent {
+export class ContactUsComponent implements AfterViewInit, OnDestroy {
   // ----- Hardcoded admin credentials -----
   private readonly ADMIN_USERNAME = 'Admin';
   private readonly ADMIN_PASSWORD = 'Admin@123';
+
+  @ViewChild('contactPage', { static: false })
+  contactPageRef!: ElementRef<HTMLElement>;
 
   // ----- Form data -----
   formData = {
@@ -20,7 +32,7 @@ export class ContactUsComponent {
     email: '',
     phone: '',
     service: '',
-    message: ''
+    message: '',
   };
 
   savedRequests: any[] = [];
@@ -33,20 +45,83 @@ export class ContactUsComponent {
   adminPassword = '';
   loginError = '';
 
-  constructor() {
+  // ----- Reveal / observer state -----
+  private observer: IntersectionObserver | null = null;
+  private revealElements: HTMLElement[] = [];
+  private isBrowser = false;
+
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+    this.isBrowser = isPlatformBrowser(this.platformId);
     this.loadRequests();
+  }
+
+  // =========================================
+  // REVEAL ON SCROLL (same as About/Services)
+  // =========================================
+  ngAfterViewInit(): void {
+    if (!this.isBrowser) return;
+
+    const host = this.contactPageRef?.nativeElement;
+    if (!host) return;
+
+    const prefersReducedMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches;
+
+    this.revealElements = Array.from(
+      host.querySelectorAll<HTMLElement>('.reveal')
+    );
+
+    if (prefersReducedMotion) {
+      this.revealElements.forEach((el) => el.classList.add('revealed'));
+      return;
+    }
+
+    if ('IntersectionObserver' in window) {
+      const observerOptions: IntersectionObserverInit = {
+        root: null,
+        rootMargin: '0px 0px -40px 0px',
+        threshold: 0.08,
+      };
+
+      this.observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      this.revealElements.forEach((el) => this.observer!.observe(el));
+    } else {
+      this.revealElements.forEach((el) => el.classList.add('revealed'));
+    }
+  }
+
+  ngOnDestroy(): void {
+    if (this.observer) {
+      this.revealElements.forEach((el) => this.observer!.unobserve(el));
+      this.observer.disconnect();
+      this.observer = null;
+    }
   }
 
   // =====================
   // STORAGE
   // =====================
   loadRequests(): void {
+    if (!this.isBrowser) return;
     const stored = localStorage.getItem('contact_requests');
     this.savedRequests = stored ? JSON.parse(stored) : [];
   }
 
   saveRequests(): void {
-    localStorage.setItem('contact_requests', JSON.stringify(this.savedRequests));
+    if (!this.isBrowser) return;
+    localStorage.setItem(
+      'contact_requests',
+      JSON.stringify(this.savedRequests)
+    );
   }
 
   // =====================
@@ -60,7 +135,7 @@ export class ContactUsComponent {
 
     this.savedRequests.push({
       ...this.formData,
-      date: new Date().toLocaleString()
+      date: new Date().toLocaleString(),
     });
     this.saveRequests();
 
@@ -70,7 +145,7 @@ export class ContactUsComponent {
       email: '',
       phone: '',
       service: '',
-      message: ''
+      message: '',
     };
 
     setTimeout(() => (this.isSubmitted = false), 3000);
@@ -145,7 +220,6 @@ export class ContactUsComponent {
     }
   }
 
-  // Close modal when clicking on the dark overlay (outside modal content)
   onModalOverlayClick(event: MouseEvent): void {
     if ((event.target as HTMLElement).classList.contains('modal-overlay')) {
       this.closeAdminModal();

@@ -1,15 +1,21 @@
-<section class="products-section">
+<!-- product-list.html -->
+<section class="products-section" #productsSection>
   <div class="products-container">
 
     <!-- HEADER -->
-    <div class="products-header">
+    <div class="products-header reveal">
       <h2>Our Products</h2>
       <p>Stay cool and comfortable with our range of high-efficiency AC units.</p>
     </div>
 
     <!-- GRID -->
     <div class="products-grid">
-      <div class="product-card" *ngFor="let product of products">
+      <div
+        class="product-card reveal"
+        *ngFor="let product of products; let i = index"
+        [class.delay-1]="i % 3 === 1"
+        [class.delay-2]="i % 3 === 2"
+      >
         <div class="product-image-wrapper">
           <img [src]="product.img" [alt]="product.name" loading="lazy" />
         </div>

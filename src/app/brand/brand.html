@@ -1,12 +1,21 @@
-<section class="brands-section">
+<!-- brand.html -->
+<section class="brands-section" #brandsSection>
   <div class="brands-container">
-    <div class="brands-header">
+
+    <!-- HEADER -->
+    <div class="brands-header reveal">
       <h2>Our Premium Brand Partners</h2>
       <p>Explore our selection of industry-leading climate control and electronics manufacturers.</p>
     </div>
 
+    <!-- GRID -->
     <div class="brands-grid">
-      <div class="brand-card" *ngFor="let brand of brands">
+      <div
+        class="brand-card reveal"
+        *ngFor="let brand of brands; let i = index"
+        [class.delay-1]="i % 3 === 1"
+        [class.delay-2]="i % 3 === 2"
+      >
         <div class="brand-image-wrapper">
           <img [src]="brand.image" [alt]="brand.name" loading="lazy" />
           <!-- <span class="brand-badge">{{ brand.badge }}</span>
@@ -21,5 +30,6 @@
         </div>
       </div>
     </div>
+
   </div>
 </section>

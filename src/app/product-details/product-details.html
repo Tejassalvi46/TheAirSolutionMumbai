@@ -1,18 +1,44 @@
-<div class="detail-container" *ngIf="product">
-    <a routerLink="/product-list" class="back-btn">&larr; Back to All Products</a>
-    
-    <div class="product-detail-card">
-        <img [src]="product.img" [alt]="product.name">
-        <div class="detail-info">
-            <h1>{{ product.name }}</h1>
-            <!-- <h2 class="price">{{ product.price }}</h2> -->
-            <p class="description"><strong>Description:</strong> {{ product.desc }}</p>
-            <!-- <button class="btn" (click)="addToCart()">Add to Cart</button> -->
-        </div>
+<!-- product-details.html -->
+<div class="detail-container" *ngIf="product" #detailsContainer>
+
+  <!-- BACK LINK -->
+  <a routerLink="/product-list" class="back-btn reveal">
+    &larr; Back to All Products
+  </a>
+
+  <!-- PRODUCT CARD -->
+  <div class="product-detail-card reveal delay-1">
+
+    <!-- IMAGE BOX -->
+    <div class="detail-image-box">
+      <img [src]="product.img" [alt]="product.name" loading="lazy" />
     </div>
+
+    <!-- INFO BOX -->
+    <div class="detail-info">
+      <h1>{{ product.name }}</h1>
+
+      <!-- Uncomment if needed:
+      <h2 class="price">{{ product.price }}</h2>
+      -->
+
+      <p class="description">
+        <strong>Description:</strong> {{ product.desc }}
+      </p>
+
+      <!-- Uncomment if needed:
+      <button class="btn" (click)="addToCart()">Add to Cart</button>
+      -->
+    </div>
+
+  </div>
+
 </div>
 
+<!-- NOT FOUND -->
 <div class="detail-container" *ngIf="!product">
-    <h2>Product not found!</h2>
-    <p><a routerLink="/product-list" class="back-btn">Go back to product list</a></p>
+  <h2 class="reveal">Product not found!</h2>
+  <p class="reveal delay-1">
+    <a routerLink="/product-list" class="back-btn">Go back to product list</a>
+  </p>
 </div>

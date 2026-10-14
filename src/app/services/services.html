@@ -1,9 +1,10 @@
-<div class="services-page">
+<!-- services.html -->
+<div class="services-page" #servicesPage>
 
   <!-- =========================================
        PAGE TITLE — "SERVICES"
        ========================================= -->
-  <div class="page-title-box">
+  <div class="page-title-box reveal">
     <h1>SERVICES</h1>
   </div>
 
@@ -12,8 +13,7 @@
        ========================================= -->
   <div class="content-grid">
 
-    <!-- Left: Text Block -->
-    <div class="text-box">
+    <div class="text-box reveal delay-1">
       <p class="service-para">
         Designing, Installation (Copper Pipes, Ducting, Drain Pipes if in scope,
         Indoor units of different types with their respective Outdoor units,
@@ -33,29 +33,41 @@
       </p>
     </div>
 
-    <!-- Right: Image Block -->
-    <div class="image-box">
-      <img src="assets/images/services-ac-maintenance.jpg"
-           alt="AC Maintenance and Service" loading="lazy">
+    <div class="image-box reveal delay-2">
+      <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=900&q=80"
+           alt="AC Installation and Commissioning" loading="lazy">
     </div>
 
   </div>
 
   <!-- =========================================
-       BOTTOM FULL-WIDTH TEXT BOX
+       MAINTENANCE & SERVICE SECTION — Image Left, Text Right
        ========================================= -->
-  <div class="bottom-text-box">
-    <p>
-      A qualified service technician will come to your home or business site and
-      maintain your system at a prescheduled time. We will perform comprehensive
-      preventative maintenance as well as an in depth inspection of your system
-      for future problems.
-    </p>
-    <p>
-      If there are potential problems the technician will notify you and if you
-      like they can provide service and repairs to fix the problem before it
-      become more serious. We also take Annual Maintenance Contract of HVAC system.
-    </p>
+  <div class="maintenance-section reveal">
+    <div class="maintenance-grid">
+
+      <div class="maintenance-image-box">
+        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=900&q=80"
+             alt="AC Maintenance and Service Technician" loading="lazy">
+      </div>
+
+      <div class="maintenance-text-box">
+        <h2>MAINTENANCE AND SERVICE:</h2>
+        <p class="service-para">
+          A qualified service technician will come to your home or business site
+          and maintain your system at a prescheduled time. We will perform
+          comprehensive preventative maintenance as well as an in depth
+          inspection of your system for future problems.
+        </p>
+        <p class="service-para">
+          If there are potential problems the technician will notify you and if
+          you like they can provide service and repairs to fix the problem
+          before it becomes more serious. We also take Annual Maintenance Contract
+          of HVAC systems.
+        </p>
+      </div>
+
+    </div>
   </div>
 
 </div>

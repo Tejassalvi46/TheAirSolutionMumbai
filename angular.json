@@ -34,21 +34,17 @@
             "styles": ["src/styles.css"]
           },
           "configurations": {
-            "production": {
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "500kB",
-                  "maximumError": "1MB"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "20kB",
-                  "maximumError": "25kB"
-                }
-              ],
-              "outputHashing": "all"
-            },
+             "production": {
+    "baseHref": "/TheAirSolutionMumbai/",
+    "budgets": [
+      {
+        "type": "initial",
+        "maximumWarning": "500kB",
+        "maximumError": "1MB"
+      }
+    ],
+    "outputHashing": "all"
+  },
             "development": {
               "optimization": false,
               "extractLicenses": false,
